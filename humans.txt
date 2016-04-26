@@ -1,0 +1,26 @@
+/* TEAM */
+ChristopherL
+Site: http://christopherl.com/contact
+Twitter: @chrislarrycarl
+Location: In Your Web Browser
+
+
+/* THANKS */
+The ChristopherL team - Mom would be proud
+Panic - Without whom we'd have to scp everything, and that sucks
+Rasmus Lerdorf - Without whom we'd probably be working with Ruby, or, worse, C#
+JetBrains - The second best thing from Czech Republic (behind Pilsner Urquell)
+Sweden - Home of the worlds greatest RDBMS and furniture
+The Annex - The finest team, within the finest team, we've ever worked with, probably
+Brian Fox - One of our personal heros
+Specialized - Bike commuting ftw
+Pabst Blue Ribbon - Our best code is fueled by these guys
+
+
+/* SITE */
+Last update: 2016/04/25
+Standards: HTML5, CSS3, Awesome
+Components: Smarty, jQuery, Normalize.css, Skeleton.css, Featherlight.js
+Services: Google Analytics, AddThis, Optimizely, Hotjar, Mapstylr
+Software: PhpStorm, Photoshop, Firefox, Git, Transmit
+Hosting: MediaTemple

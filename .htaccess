@@ -1,0 +1,35 @@
+#/**
+# * Apache Distributed Config File - Cool nerd stuff.
+# *
+# * @package ChristopherL.com
+# * @copyright 2016 ChristopherL (https://github.com/chrislarrycarl)
+# * @license http://www.gnu.org/licenses/gpl-2.0.html
+# */
+
+
+# Get fancy with rewrites
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{HTTP_HOST} ^www\.christopherl\.com [NC]
+    RewriteRule ^(.*)$ http://christopherl.com/$1 [L,R=301]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+    ErrorDocument 404 /404.php
+</IfModule>
+
+
+# Shrink it down
+<IfModule mod_deflate.c>
+    <filesMatch "\.(txt|xml|rss|js|css|html|php|png|jpg|jpeg)$">
+        SetOutputFilter DEFLATE
+    </filesMatch>
+</IfModule>
+
+
+# Cache it
+<filesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
+	Header set Cache-Control "max-age=604800, public"
+</filesMatch>
