@@ -189,7 +189,7 @@ function newsletter_subscribe() {
             <p>Don't let your browser have all the fun. Get your inbox involved.</p>
             
             <div id="mc_embed_signup">
-            <form action="//christopherl.us13.list-manage.com/subscribe/post?u=5bb70e8892ebb1819c98306da&amp;id=922ca4bccd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <form action="//christopherl.us13.list-manage.com/subscribe/post?u=5bb70e8892ebb1819c98306da&amp;id=922ca4bccd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
                 <div id="mc_embed_signup_scroll">
                 
                 <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
