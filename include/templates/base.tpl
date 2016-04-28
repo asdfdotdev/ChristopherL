@@ -8,7 +8,7 @@
  */
 *}
 <!doctype html>
-<html lang="en-US" itemscope itemtype="http://schema.org/Article">
+<html lang="en-US" itemscope itemtype="http://schema.org/WebPage">
 <head>
     {* Basic Page Details *}
     <title>{$page_title}</title>
@@ -42,8 +42,8 @@
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="stylesheet" href="{$site_root}/css/styles.css?v={$version}">
     <link rel="icon" href="{$site_root}/img/favicon.png">
-    <link rel="author" href="humans.txt">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/myfolder/sitemap.xml" />
+    <link rel="author" itemprop="author" href="{$site_domain}{$site_root}/humans.txt">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{$site_domain}{$site_root}/sitemap.xml" />
 
     {*
         Only output canonical for pages with a page url, we don't set this for the 404 page so that
@@ -177,6 +177,10 @@
     {/if}
 
     <link href='https://fonts.googleapis.com/css?family=Sacramento|Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    {literal}
+    <script type="application/ld+json">{"@context" : "http://schema.org","@type" : "Organization","name" : "ChristopherL","url" : "http://christopherl.com","sameAs" : ["https://twitter.com/chrislarrycarl","https://www.facebook.com/chrislarrycarl","https://www.linkedin.com/in/chriscarlevato","https://github.com/chrislarrycarl"]}</script>
+    {/literal}
 
     {$body_footer_extras}
 
