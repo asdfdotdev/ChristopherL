@@ -31,6 +31,7 @@ function smarty_scaffolding() {
     $smarty->debugging = $config['smarty']['debug'];
 
     // Initialize Page settings from $config
+    $smarty->assign('version', $config['version']);
     $smarty->assign('site_domain', $config['site_domain']);
     $smarty->assign('site_root', $config['site_root']);
     $smarty->assign('a_b_testing', $config['a_b_testing']);
@@ -40,7 +41,17 @@ function smarty_scaffolding() {
     $smarty->assign('optimizely_id', $config['optimizely_id']);
     $smarty->assign('hotjar_id', $config['hotjar_id']);
     $smarty->assign('compress', $config['compress']);
-    $smarty->assign('version', $config['version']);
+    $smarty->assign('google_verification', $config['google_verification']);
+    $smarty->assign('bing_verification', $config['bing_verification']);
+
+    if ($config['schema']['type'] == 0) {
+        $config['schema']['type'] = 'Organization';
+    }
+    else {
+        $config['schema']['type'] = 'Person';
+    }
+
+    $smarty->assign('schema', $config['schema']);
 }
 
 

@@ -62,6 +62,12 @@
         <script src="https://cdn.optimizely.com/js/{$optimizely_id}.js"></script>
     {/if}
 
+    {*
+        Webmaster Tools
+    *}
+    <meta name="google-site-verification" content="{$google_verification}">
+    <meta name="msvalidate.01" content="{$bing_verification}">
+
     {$head_extras}
 </head>
 <body>
@@ -162,25 +168,21 @@
 
     {*
         Google Analytics Tracking Code
-        Use literal tags to avoid syntax error with GA function curly brackets
     *}
     {if !$is_dev && $google_analytics_id}
-        <script>{literal}(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');{/literal}ga('create', '{$google_analytics_id}', 'auto');ga('require', 'displayfeatures');ga('require', 'linkid', 'linkid.js');ga('send', 'pageview');</script>
+        <script>(function(i,s,o,g,r,a,m) { i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() { (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', '{$google_analytics_id}', 'auto');ga('require', 'displayfeatures');ga('require', 'linkid', 'linkid.js');ga('send', 'pageview');</script>
     {/if}
 
     {*
         Hotjar Tracking Code for http://christopherl.com
-        Use literal tags to avoid syntax error with Hotjar function curly brackets
     *}
     {if !$is_dev && $hotjar_id}
-        <script>{literal}(function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:{/literal}{$hotjar_id}{literal},hjsv:5};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');{/literal}</script>
+        <script>(function(h,o,t,j,a,r) { h.hj=h.hj||function() { (h.hj.q=h.hj.q||[]).push(arguments) } ;h._hjSettings= { hjid:{$hotjar_id},hjsv:5 } ;a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r); } )(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');</script>
     {/if}
 
     <link href='https://fonts.googleapis.com/css?family=Sacramento|Noto+Sans:400,700' rel='stylesheet' type='text/css'>
 
-    {literal}
-    <script type="application/ld+json">{"@context" : "http://schema.org","@type" : "Organization","name" : "ChristopherL","url" : "http://christopherl.com","sameAs" : ["https://twitter.com/chrislarrycarl","https://www.facebook.com/chrislarrycarl","https://www.linkedin.com/in/chriscarlevato","https://github.com/chrislarrycarl"]}</script>
-    {/literal}
+    <script type="application/ld+json"> { "@context":"http://schema.org","@type":"{$schema.type}","name":"{$schema.name}","url":"{$site_domain}{$site_root}","telephone":"{$schema.telephone}","address": { "@type":"PostalAddress","streetAddress":"{$schema.street}","addressLocality":"{$schema.city}","addressRegion":"{$schema.region}","postalCode":"{$schema.postal_code}","addressCountry":"{$schema.country}" } ,{if $schema.type == 'Person'}"jobTitle":"{$schema.job_title}","affiliation":"{$schema.employer}","additionalName":"{$schema.also_known_as}",{/if}"sameAs":["{'", "'|implode:$schema.same_as}"] } </script>
 
     {$body_footer_extras}
 
