@@ -129,10 +129,10 @@ function package_form_submission($data=array()) {
         // process array data
         if ( is_array($form_input['value']) ) {
             // trim excess spaces
-            $value = array_filter($form_input['value'], 'trim');
+            $value = array_map('trim',$form_input['value']);
 
             // filter array values
-            $value = filter_var($value, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW, FILTER_REQUIRE_ARRAY);
+            $value = filter_var_array($value, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
         }
         // process single value data
         else {
@@ -140,7 +140,7 @@ function package_form_submission($data=array()) {
             $value = trim($form_input['value']);
 
             // filter value
-            $value = filter_var($form_input['value'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+            $value = filter_var($value, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
         }
 
         // trim excess spaces
