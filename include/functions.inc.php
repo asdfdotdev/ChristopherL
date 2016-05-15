@@ -129,7 +129,7 @@ function package_form_submission($data=array()) {
         // process array data
         if ( is_array($form_input['value']) ) {
             // trim excess spaces
-            $value = array_map('trim',$form_input['value']);
+            $value = array_map('trim', $form_input['value']);
 
             // filter array values
             $value = filter_var_array($value, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
