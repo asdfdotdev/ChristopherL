@@ -10,6 +10,13 @@
 <!doctype html>
 <html lang="en-US" itemscope itemtype="http://schema.org/WebPage">
 <head>
+    {* Misc Meta *}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all, index, follow">
+    <meta name="apple-mobile-web-app-title" content="ChristopherL">
+
     {* Basic Page Details *}
     <title>{$page_title}</title>
     <meta name="description" content="{$page_desc}" itemprop="description">
@@ -30,13 +37,6 @@
     <meta property="og:image" content="{$site_domain}{$site_root}{$image_facebook}">
     <meta property="og:description" content="{$page_desc}">
     <meta property="og:site_name" content="ChristopherL">
-
-    {* Misc Meta *}
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all, index, follow">
-    <meta name="apple-mobile-web-app-title" content="ChristopherL">
 
     {* Misc Link *}
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
