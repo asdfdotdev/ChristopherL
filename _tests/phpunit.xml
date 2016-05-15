@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    backupStaticAttributes="false"
+    cacheTokens="false"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    forceCoversAnnotation="false"
+    mapTestClassNameToCoveredClassName="false"
+    processIsolation="false"
+    stopOnError="false"
+    stopOnFailure="false"
+    stopOnIncomplete="false"
+    stopOnSkipped="false"
+    strict="false"
+    verbose="true">
+
+    <testsuites>
+        <!-- Run All Tests -->
+        <testsuite name="cl_all">
+            <directory>./</directory>
+        </testsuite>
+
+        <!-- System Requirements Tests -->
+        <testsuite name="cl_system">
+            <directory>system</directory>
+        </testsuite>
+
+        <!-- Core Functions Unit Tests -->
+        <testsuite name="cl_core">
+            <directory>unit/FunctionsIncludeTest.php</directory>
+        </testsuite>
+
+        <!-- AJAX Handler Unit Tests -->
+        <testsuite name="cl_ajax">
+            <file>unit/AjaxHandlerTest.php</file>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php"></directory>
+            <file></file>
+            <exclude>
+                <directory suffix=".php"></directory>
+                <file></file>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>

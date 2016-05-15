@@ -128,26 +128,28 @@ function package_form_submission($data=array()) {
 
         // process array data
         if ( is_array($form_input['value']) ) {
-            // trim excess spaces
+            // trim excess spaces and convert smart quotes
             $value = array_map('trim', $form_input['value']);
+            $value = array_map('convert_smart_quotes', $value);
 
             // filter array values
-            $value = filter_var_array($value, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+            $value = filter_var_array($value, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
         }
         // process single value data
         else {
-            // trim excess spaces
+            // trim excess spaces and convert smart quotes
             $value = trim($form_input['value']);
+            $value = convert_smart_quotes($value);
 
             // filter value
-            $value = filter_var($value, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+            $value = filter_var($value, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
         }
 
         // trim excess spaces
         $name = trim($form_input['name']);
 
         // filter name
-        $name = filter_var($form_input['name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+        $name = filter_var($form_input['name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
 
         // package it up
         $form[$name] = $value;
@@ -215,4 +217,18 @@ function newsletter_subscribe() {
     </section>
 HTML;
 
+}
+
+/**
+ * Make smart quotes more intelligent (by replacing them).
+ *
+ * @param $string           Content with smart quotes that need to be replaced.
+ *
+ * @return mixed            Content with quotes replace.
+ */
+function convert_smart_quotes($string) {
+    $dirty_quotes = array(chr(145), chr(146), chr(147), chr(148), chr(151), "“", "”", "‘", "’");
+    $clean_quotes = array("'", "'", '"', '"', '-', '"', '"', "'", "'");
+
+    return str_replace($dirty_quotes, $clean_quotes, $string);
 }
