@@ -10,8 +10,6 @@
 require_once('include/config.inc.php');
 require_once('include/functions.inc.php');
 
-header("Content-type: application/json");
-
 // initialize response values to defaults
 $response = array(
     'status'    => '404',

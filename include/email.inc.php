@@ -57,7 +57,7 @@ function send_contact_email($form=array(), &$response) {
             $send_result = mail("{$config['send_to_address']}",
                                 "Greetings from ChristopherL",
                                 "{$form['message']}\n\n--------------\n{$form['fullname']}\n{$form['email']}",
-                                "From: {$config['send_to_address']}\r\nReply-To: {$config['send_to_address']}");
+                                "From: {$form['email']}");
 
             // didn't work, have them try again
             if (!$send_result) {
