@@ -54,13 +54,9 @@ $content = <<<HTML
                 We're stoked for an opportunity to help you get to know ChristopherL better. So pull up a chair, get comfortable, 
                 and <i>do it</i>.
             </p>
-            <img src="img/shia.png"
-                alt="Pep Talk Flexing Guy"
-                title="A Little Motivation"
-                width="160" 
-                class="lightbox shia" 
-                data-featherlight="#fl1" 
-                data-event="play pep talk video">
+            <div class="shia">
+                <div class="play-button" data-featherlight="#fl1" data-event="play pep talk video"></div>
+            </div>
         </div>    
     </section>
     <section class="highlight button-links">

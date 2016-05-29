@@ -1424,7 +1424,21 @@ background: #D8D8D8;
   vertical-align: middle;
 }
 .shia {
+  width: auto;
+  background: url('../img/shia.png');
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 305px;
+  margin: auto;
+
+  .play-button {
+    margin: 125px 0 0 50px;
+    display: block;
+    position: absolute;
+  }
+
   @include desktop {
+    float: right;
     margin: -220px 5% 0 0 !important;
   }
 }
@@ -1503,6 +1517,34 @@ footer .head {
   font-size: 0.5em;
   text-align: center;
   margin: 1% auto !important;
+}
+.play-button {
+  height: 40px;
+  width: 65px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10.5px;
+    left: 24px;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 9.5px 0 9.5px 17px;
+    border-color: transparent transparent transparent rgba(0, 173, 239, 0.7);
+  }
+
+  &:hover {
+    background: rgba(0, 173, 239, 1);
+
+    &:after {
+      border-color: transparent transparent transparent rgba(255, 255, 255, 1);
+    }
+  }
 }
 
 // Integrations/Widgets

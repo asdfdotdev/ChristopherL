@@ -41,7 +41,7 @@
         });
 
         // misc listner to track non link clicks (images, easter egg spans)
-        $('img, span.egg').on('click', function(event){
+        $('img, span.egg, .play-button').on('click', function(event){
             if(! $(this).parent().is('a')){
                 var clicked = $(this);
 
