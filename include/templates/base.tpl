@@ -43,7 +43,11 @@
     <link rel="stylesheet" href="{$site_root}/css/styles.css?v={$version}">
     <link rel="icon" href="{$site_root}/img/favicon.png">
     <link rel="author" itemprop="author" href="{$site_domain}{$site_root}/humans.txt">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="{$site_domain}{$site_root}/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{$site_domain}{$site_root}/sitemap.xml">
+
+    {if $google_plus_url}
+    <link href="{$google_plus_url}" rel="publisher">
+    {/if}
 
     {*
         Only output canonical for pages with a page url, we don't set this for the 404 page so that

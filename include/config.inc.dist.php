@@ -72,6 +72,10 @@ $config = array(
     // Webmaster Tools Verification Codes (Google & Bing)
     'google_verification'   => '',
     'bing_verification'     => '',
+
+
+    // Google+ URL, used for publisher relationship link tag
+    'google_plus_url'       => '',
 );
 
 

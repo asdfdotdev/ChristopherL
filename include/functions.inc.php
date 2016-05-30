@@ -43,6 +43,7 @@ function smarty_scaffolding() {
     $smarty->assign('compress', $config['compress']);
     $smarty->assign('google_verification', $config['google_verification']);
     $smarty->assign('bing_verification', $config['bing_verification']);
+    $smarty->assign('google_plus_url', $config['google_plus_url']);
 
     if ($config['schema']['type'] == 0) {
         $config['schema']['type'] = 'Organization';
