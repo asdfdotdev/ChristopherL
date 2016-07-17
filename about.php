@@ -57,7 +57,7 @@ function initMap() {
     }
 
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 43.7, lng: -101},
+        center: {lat: 44.7, lng: -101},
         scrollwheel: false,
         zoom: responsive_zoom,
         disableDefaultUI: true,
@@ -67,7 +67,7 @@ function initMap() {
     var marker = new google.maps.Marker({
         position: {lat: 42.9633599, lng: -85.6680863},
         map: map,
-        icon: 'img/pushpin.png'
+        icon: 'img/pushpin_bw.png'
     });
     var marker = new google.maps.Marker({
         position: {lat: 45.5230622, lng: -122.6764816},
@@ -77,7 +77,7 @@ function initMap() {
     var marker = new google.maps.Marker({
         position: {lat: 43.6187102, lng: -116.2146068},
         map: map,
-        icon: 'img/pushpin.png'
+        icon: 'img/pushpin_bw.png'
     });
   
 }
@@ -104,7 +104,7 @@ $content = <<<HTML
                 and made no money. A key distinction to fellow bubble era darlings, however, is that ChristopherL was a student homepage.
             </p>
             <p>
-                Nearly 20 years, 2,500 miles, 8 revisions, and a short hiatus later <a href="https://web.archive.org/web/20160111112430*/http://christopherl.com/" target="_blank">the journey continues</a>.
+                Nearly 20 years, 3,000 miles, 8 revisions, and a short hiatus later <a href="https://web.archive.org/web/20160111112430*/http://christopherl.com/" target="_blank">the journey continues</a>.
             </p>
         </div>
     </section>

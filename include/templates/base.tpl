@@ -119,6 +119,7 @@
                     Uncomment this so people can visit Keith's site, if he ever finishes it.
                     <li><a href="http://thekloudgroup.com/" target="_blank" data-event="footer">The Kloud Group</a></li>
                 *}
+                    <li><a href="http://www.flickerbox.com" target="_blank" data-event="footer">Flickerbox</a></li>
                     <li><a href="https://www.tsheets.com" target="_blank" data-event="footer">TSheets</a></li>
                 </ul>
             </div>
