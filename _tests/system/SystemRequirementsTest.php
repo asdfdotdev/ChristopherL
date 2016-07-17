@@ -89,6 +89,7 @@ class SystemRequirementsTest extends PHPUnit_Framework_TestCase
             'img/logos/php.png',
             'img/logos/salesforce.png',
             'img/pushpin.png',
+            'img/pushpin_bw.png',
             'img/shia.png',
             'img/social/404.jpg',
             'img/social/about.jpg',
