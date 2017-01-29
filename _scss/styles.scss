@@ -1304,6 +1304,11 @@ nav {
 .hero_about {
   @extend .hero;
   background-image: url(../img/heros/about.jpg);
+  background-position: right center;
+
+  @include desktop {
+    background-position: center center;
+  }
 }
 .hero_contact {
   @extend .hero;
