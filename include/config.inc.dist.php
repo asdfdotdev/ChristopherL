@@ -76,6 +76,9 @@ $config = array(
 
     // Google+ URL, used for publisher relationship link tag
     'google_plus_url'       => '',
+
+    // Google Maps API Key
+    'google_maps_key'       => '',
 );
 
 

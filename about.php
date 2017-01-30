@@ -63,26 +63,47 @@ function initMap() {
         disableDefaultUI: true,
         styles: [{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"all","elementType":"all","stylers":[{"saturation":-70},{"lightness":37},{"gamma":1.15}]},{"featureType":"all","elementType":"labels","stylers":[{"visibility":"off"},{"gamma":0.26}]},{"featureType":"road","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":0},{"lightness":0},{"gamma":0}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#ffffff"},{"saturation":0},{"lightness":50}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"on"},{"lightness":-50}]},{"featureType":"administrative.province","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"administrative.province","elementType":"labels.text","stylers":[{"lightness":20}]}]
     });
-  
-    var marker = new google.maps.Marker({
-        position: {lat: 42.9633599, lng: -85.6680863},
-        map: map,
-        icon: 'img/pushpin_bw.png'
+    
+    var icons = {active: 'img/pushpin.png', inactive: 'img/pushpin_bw.png'};
+    
+    var markers = [
+        {
+            position: {lat: 42.9633599, lng: -85.6680863},
+            icon: icons.inactive,
+            url: 'https://goo.gl/maps/uXQxFQc3p9Q2',
+            event: 'map-pin-gr'
+        },
+        {
+            position: {lat: 43.6187102, lng: -116.2146068},
+            icon: icons.inactive,
+            url: 'https://goo.gl/maps/uz4wo7k9QaC2',
+            event: 'map-pin-boi'
+        },
+        {
+            position: {lat: 45.5230622, lng: -122.6764816},
+            icon: icons.active,
+            url: 'https://goo.gl/maps/W6MgBermf8m',
+            event: 'map-pin-pdx'
+        }
+    ];
+    
+    $.each(markers, function(){
+        var marker = new google.maps.Marker({       
+            position: $(this).attr('position'),
+            icon: $(this).attr('icon'),
+            url: $(this).attr('url'),
+            event: $(this).attr('event'),
+            map: map
+        }); 
+        
+        google.maps.event.addListener(marker, 'click', function() { 
+            $(document).trigger('ga_track', [{type:"other_click",identifier: marker.event}]);
+            window.open(marker.url); 
+        });
     });
-    var marker = new google.maps.Marker({
-        position: {lat: 45.5230622, lng: -122.6764816},
-        map: map,
-        icon: 'img/pushpin.png'
-    });
-    var marker = new google.maps.Marker({
-        position: {lat: 43.6187102, lng: -116.2146068},
-        map: map,
-        icon: 'img/pushpin_bw.png'
-    });
-  
 }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={$config['google_maps_key']}"></script>
 HTML;
 
 $smarty->assign('body_footer_extras', smarty_content($body_footer));
