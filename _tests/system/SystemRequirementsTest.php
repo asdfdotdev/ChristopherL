@@ -3,8 +3,8 @@
  * Class SystemRequirementsTest
  *
  * Tests include:
- *  testPHPUnitVersion      Verifies PHPUnit is version 5 or newer
- *  testPHPVersion          Verifies PHP is version 5.5 or newer
+ *  testPHPUnitVersion      Verifies PHPUnit compatibility
+ *  testPHPVersion          Verifies PHP is version 5.6 or newer
  *  testSmartyVersion       Verifies Smarty is version 3 or newer
  *  testCompleteInstall     Verifies all files exist
  */
@@ -12,7 +12,14 @@ class SystemRequirementsTest extends PHPUnit_Framework_TestCase
 {
     public function testPHPUnitVersion()
     {
-        $this->assertGreaterThanOrEqual(5, PHPUnit_Runner_Version::id());
+        // we'd really prefer you use PHPUnit 5
+        if (floatval(PHPUnit_Runner_Version::id() > 4.9)) {
+            $this->assertGreaterThanOrEqual(5.3, floatval(PHPUnit_Runner_Version::id()), '---Please upgrade to PHPUnit 5.3 or newer.');
+        }
+        // but for you old-timers 4.8 still works, probably
+        else {
+            $this->assertGreaterThanOrEqual(4.8, floatval(PHPUnit_Runner_Version::id()), '---Please upgrade to PHPUnit 4.8 or newer.');
+        }
     }
 
     /**
@@ -20,7 +27,7 @@ class SystemRequirementsTest extends PHPUnit_Framework_TestCase
      */
     public function testPHPVersion()
     {
-        $this->assertGreaterThanOrEqual(5.5, phpversion());
+        $this->assertGreaterThanOrEqual(5.6, floatval(phpversion()));
     }
 
     /**
@@ -31,7 +38,7 @@ class SystemRequirementsTest extends PHPUnit_Framework_TestCase
         require_once('include/libs/smarty/Smarty.class.php');
         $smarty = new Smarty();
 
-        $this->assertGreaterThanOrEqual(3, $smarty::SMARTY_VERSION);
+        $this->assertGreaterThanOrEqual(3, floatval($smarty::SMARTY_VERSION));
     }
 
     /**
@@ -48,7 +55,6 @@ class SystemRequirementsTest extends PHPUnit_Framework_TestCase
             '_tests/system/SystemRequirementsTest.php',
             '_tests/unit/AjaxHandlerTest.php',
             '_tests/unit/ConfigurationTest.php',
-            '_tests/unit/EmailIncludeTest.php',
             '_tests/unit/FunctionsIncludeTest.php',
             'about.php',
             'ajax.php',

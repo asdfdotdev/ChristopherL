@@ -13,7 +13,7 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
         require('include/config.inc.php');
 
         // verify we have the correct number of config array elements
-        $this->assertEquals(19, count($config), 'Incorrect number of settings in $config array.');
+        $this->assertEquals(20, count($config), 'Incorrect number of settings in $config array.');
 
         // verify config array keys are named as expected
         $this->assertTrue(array_key_exists('version', $config), '$config element version missing.');
@@ -33,6 +33,7 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(array_key_exists('google_verification', $config), '$config element google_verification missing.');
         $this->assertTrue(array_key_exists('bing_verification', $config), '$config element bing_verification missing.');
         $this->assertTrue(array_key_exists('google_plus_url', $config), '$config element google_plus_url missing.');
+        $this->assertTrue(array_key_exists('google_maps_key', $config), '$config element google_maps_key missing.');
         $this->assertTrue(array_key_exists('schema', $config), '$config element schema missing.');
         $this->assertTrue(array_key_exists('smarty', $config), '$config element smarty missing.');
 

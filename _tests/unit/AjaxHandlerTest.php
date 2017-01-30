@@ -7,6 +7,9 @@
  */
 class AjaxHandlerTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @runInSeparateProcess
+     */
     public function testEmptyRequest()
     {
         $request = "\$_POST['method'] = '';" . str_replace('<?php', '', file_get_contents('ajax.php'));
