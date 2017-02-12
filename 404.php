@@ -3,7 +3,7 @@
  * 404 Page - Hopefully nobody sees this.
  *
  * @package ChristopherL.com
- * @copyright 2016 ChristopherL (https://github.com/chrislarrycarl)
+ * @copyright 2016-2017 ChristopherL (https://github.com/chrislarrycarl)
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -92,4 +92,4 @@ smarty_smoosh();
 
 
 // Output the page
-$smarty->display('base.tpl');
+$smarty->display('base.tpl', '404');

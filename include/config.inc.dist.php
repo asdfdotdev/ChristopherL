@@ -3,19 +3,19 @@
  * Global Config - Knobs and switches to make different things happen.
  *
  * @package ChristopherL.com
- * @copyright 2016 ChristopherL (https://github.com/chrislarrycarl)
+ * @copyright 2016-2017 ChristopherL (https://github.com/chrislarrycarl)
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 
 $config = array(
     // used for cache busting in query string of core CSS & JS files, increment as needed
-    'version'               => '0.1',
+    'site_version'               => '0.3',
 
     // Some resources (canonical url, social sharing images) require a complete URL
     // complete your site domain to accomodate this.
     'site_domain'           => 'http://christopherl.com',
-    
+
     // Site root, this should be blank if you're working from the literal root,
     // however, if you need to work in a subdirectory this setting allows you
     // to do that without globaly hunting for, and changing, hrefs/srcs.
@@ -26,13 +26,13 @@ $config = array(
     'site_root'             => '',
 
 
-    // 0 = development, don't enable JS analytics libraries, use unminified global.js
-    // 1 = production, enable JS analytics libraries, use minified global.min.js
+    // 0 = development, don't enable JS analytics libraries
+    // 1 = production, enable JS analytics libraries
     'dev'                   =>  0,
 
 
-    // 0 = removes excess whitespace and compresses page output to single line
-    // 1 = output markup as-is
+    // 0 = output markup as-is
+    // 1 = removes excess whitespace and compresses page output to single line
     'compress'              =>  0,
 
 
@@ -77,6 +77,7 @@ $config = array(
     // Google+ URL, used for publisher relationship link tag
     'google_plus_url'       => '',
 
+
     // Google Maps API Key
     'google_maps_key'       => '',
 );
@@ -114,6 +115,7 @@ $config['schema'] = array(
 // Smarty config settings
 $config['smarty'] = array(
     'cache'                 =>  0,
+    'cache_lifetime'        =>  604800,
     'debug'                 =>  0,
 
     // Use path from this file to templates directory
@@ -124,5 +126,5 @@ $config['smarty'] = array(
 );
 
 
-// Some PHP installs demand a timezone. If your's does tell it you live in Boise.
-ini_set('date.timezone','America/Boise');
+// Some PHP installs demand a timezone. If your's does tell it you're a Rouge Rovers
+ini_set('date.timezone','America/Detroit');

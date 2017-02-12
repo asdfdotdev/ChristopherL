@@ -1,0 +1,652 @@
+/**
+ * Base Sass Stylesheet - Makes things purdy.
+ *
+ * @package ChristopherL.com
+ * @copyright 2016-2017 ChristopherL (https://github.com/chrislarrycarl)
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+
+@font-face {
+  font-family: 'fontello';
+  src: url('font/fontello.eot?84475532');
+  src: url('font/fontello.eot?84475532#iefix') format('embedded-opentype'),
+  url('font/fontello.woff2?84475532') format('woff2'),
+  url('font/fontello.woff?84475532') format('woff'),
+  url('font/fontello.ttf?84475532') format('truetype'),
+  url('font/fontello.svg?84475532#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?84475532#fontello') format('svg');
+  }
+}
+
+// Icons
+$home_icon:         '\e800';
+$development_icon:  '\e801';
+$marketing_icon:    '\e802';
+$about_icon:        '\e803';
+$contact_icon:      '\e804';
+
+//  Typography
+//  Note: These are Google fonts, their stylesheet is included in <head> of /include/templates/base.tpl
+$primary_font:      'Noto Sans', sans-serif;
+$header_font:       'Sacramento', cursive;
+$icon_font:         'fontello';
+
+// Constraints
+$maximum_content_width: 1024px;
+
+//  Media Query Mixins
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+// Parsley Feedback Styles
+.parsley-errors-list {
+  margin: 0;
+
+  li {
+    list-style-type: none;
+    font-style: italic;
+    color: #DC143C;
+  }
+}
+
+// Featherlight lightbox Styles
+.featherlight-close-icon {
+  border: 0;
+  background: none;
+  width: 15px;
+  font-size: 20px;
+  line-height: 0px;
+  margin-top: 0;
+  margin: -5px -10px 0 0;
+  background: none !important;
+}
+
+// Utility Styles
+.parsley-error,
+.error {
+  border: solid 1px #DC143C !important;
+}
+#feedback {
+  border-left: solid 2px #006400;
+  padding: 1%;
+  margin: -2% 0 1% 0;
+  background: #cce0cc;
+  color: #222222;
+
+  &.incomplete {
+    border-left: solid 2px #DC143C;
+    padding: 1%;
+    margin: -2% 0 1% 0;
+    background: #f8d0d8;
+    color: #222222;
+  }
+}
+.fl {
+  display: none;
+  max-width: 100%;
+}
+.fl img,
+.fl span {
+  display: block;
+  clear: both;
+  margin: auto;
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+.hidden-phone {
+  display: none;
+
+  @include tablet {
+    display: inline-block;
+  }
+}
+.hidden-tablet {
+  @include tablet {
+    display: none !important;
+  }
+}
+.hidden-desktop {
+  @include desktop {
+    display: none !important;
+  }
+}
+.the-outer-limits {
+  width: 90%;
+  max-width: $maximum_content_width;
+  display: block;
+  margin: auto;
+}
+.lightbox {
+  cursor: pointer;
+}
+.strikethrough {
+  text-decoration: line-through;
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+.wide-stance {
+  display: block;
+  position: relative;
+  margin: auto;
+  float: none;
+  max-width: 100%;
+}
+.image-left {
+  p {
+    @include desktop {
+      width: 80%;
+    }
+  }
+  img {
+    display: block;
+    margin: auto;
+
+    @include desktop {
+      float: left;
+    }
+  }
+}
+.image-right {
+  p {
+    @include desktop {
+      width: 75%;
+    }
+  }
+  img {
+    display: block;
+    margin: auto;
+
+    @include desktop {
+      float: right;
+      margin: 0 0 0 3%;
+    }
+  }
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.action-mobile {
+  @include desktop {
+    display: none;
+  }
+}
+.action-desktop {
+  display: none;
+
+  @include desktop {
+    display: inline-block;
+  }
+}
+
+// Styles
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $primary_font;
+  background: #F7F7F7;
+  border-top: solid 3px #222222;
+}
+a {
+  text-decoration: none;
+}
+a:active {
+}
+a:visited {
+}
+a:hover {
+  text-decoration: underline;
+  color: #0FA0CE !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $header_font;
+}
+h1 {
+  font-size: 1em;
+}
+header {
+  background: #FFFFFF;
+  padding: 1% 0 0 0;
+
+  @include desktop {
+    padding: 1% 0 1% 0;
+    height: 75px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto 0 auto;
+
+    @include desktop {
+      margin: 0 0 0 2%;
+      float: left;
+    }
+  }
+}
+nav {
+  width: 100%;
+  display: block;
+  clear: both;
+  height: auto;
+  margin: 0;
+  padding: 0;
+
+  @include desktop {
+    float: right;
+    margin: 2% 2% 0 0;
+    width: 55%;
+    text-align: right;
+    clear: none;
+    display: inline;
+  }
+
+  .active {
+    a {
+      color: #1EAEDB;
+    }
+
+    @include desktop {
+      border-bottom: solid 1px #1EAEDB;
+    }
+  }
+  a {
+    font-size: 2em;
+    color: #222222;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    @include desktop {
+      font-size: 1.4em;
+    }
+    span {
+      display: none;
+
+      @include desktop {
+        display: inline;
+        min-width: 100px;
+      }
+    }
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  ul {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    @include desktop {
+      right: 0;
+    }
+
+    li {
+      display: inline;
+      list-style-type: none;
+      float: left;
+      width: 20%;
+      margin: 0;
+      padding: 0;
+
+      @include desktop {
+        width: auto;
+        margin: 0 2% 0 2%;
+      }
+
+      a {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    li:first-child a:before {
+      content: $home_icon;
+    }
+    li:nth-child(2) a:before {
+      content: $development_icon;
+    }
+    li:nth-child(3) a:before {
+      content: $marketing_icon;
+    }
+    li:nth-child(4) a:before {
+      content: $about_icon;
+    }
+    li:nth-child(5) a:before {
+      content: $contact_icon;
+    }
+    li a:before {
+      font-family: $icon_font;
+
+      @include desktop {
+        content: '' !important;
+      }
+    }
+  }
+}
+.hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  width: 100%;
+  min-height: 150px;
+  clear: both;
+
+  @include tablet {
+    min-height: 250px;
+  }
+
+  @include desktop {
+    min-height: 350px;
+  }
+}
+.hero_home {
+  @extend .hero;
+  background-image: url(../img/heros/homepage.jpg);
+}
+.hero_development {
+  @extend .hero;
+  background-image: url(../img/heros/development.jpg);
+}
+.hero_marketing {
+  @extend .hero;
+  background-image: url(../img/heros/marketing.jpg);
+}
+.hero_about {
+  @extend .hero;
+  background-image: url(../img/heros/about.jpg);
+}
+.hero_contact {
+  @extend .hero;
+  background-image: url(../img/heros/contact.jpg);
+  background-position: right center;
+
+  @include desktop {
+    background-position: center center;
+  }
+}
+.hero_404 {
+  @extend .hero;
+  background-image: url(../img/heros/404.jpg);
+}
+img {
+  max-width: 100%;
+
+}
+section {
+  display: block;
+  clear: both;
+  padding-top: 2%;
+
+  h1 {
+    font-size: 4rem;
+  }
+  ul {
+    margin-left: 3%;
+  }
+}
+section.highlight,
+#map {
+  background: #D8D8D8;
+  padding: 1% 0;
+  border-top: solid 1px #222222;
+  border-bottom: solid 1px #222222;
+
+  h3,
+  p {
+    text-align: center;
+  }
+}
+#map {
+  width: 100%;
+  height: 200px;
+}
+fieldset {
+  textarea {
+    width: 100%;
+    height: 200px;
+
+    @include tablet {
+      width: 50%;
+    }
+
+  }
+  #g-recaptcha {
+    width: 302px;
+  }
+  #submit {
+    clear: both;
+    display: block;
+    margin-top: 2% !important;
+    background-color: #D8D8D8 !important;
+    transition: all 0.23s;
+    color: #FFFFFF;
+
+    &:hover {
+      background-color: #1EAEDB !important;
+      color: #FFFFFF !important;
+    }
+  }
+}
+aside.contact {
+  background: #D8D8D8;
+  border: solid 1px #6A6A6A;
+  padding: 2%;
+  text-align: center;
+  margin: 0 0 5% 5% !important;
+  float: none;
+  width: 90%;
+
+  @include tablet {
+    float: right;
+    width: 25%;
+    min-width: 250px;
+  }
+
+  h3 {
+    margin-bottom: 0 !important;
+  }
+  a {
+    font-size: 2em;
+  }
+  span {
+    display: block;
+    font-size: 0.7em;
+    margin: 2% auto;
+  }
+}
+.button-links a {
+  display: block;
+  width: 80%;
+  text-align: center;
+  padding: 2% 0px;
+  border: 1px solid #1EAEDB;
+  margin: 5% auto;
+
+  &:hover {
+    background: #1EAEDB;
+    color: #FFFFFF !important;
+    text-decoration: none;
+  }
+}
+.logos img {
+  margin: 2% auto;
+  display: block;
+  vertical-align: middle;
+}
+.shia {
+  width: auto;
+  background: url('../img/shia.png');
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 305px;
+  margin: auto;
+
+  .play-button {
+    margin: 125px 0 0 50px;
+    display: block;
+    position: absolute;
+  }
+
+  @include desktop {
+    float: right;
+    margin: -220px 5% 0 0 !important;
+  }
+}
+footer {
+  width: 100%;
+  background: #222222;
+  color: #FFFFFF;
+  padding-top: 2%;
+}
+footer h4,
+.addthis_horizontal_follow_toolbox p {
+  margin: 0 0 5% 0;
+  padding: 0;
+  line-height: 1.35;
+}
+.addthis_horizontal_follow_toolbox {
+  font-family: $header_font;
+  font-size: 3.0rem;
+  margin-bottom: 7%;
+}
+footer .head {
+  display: block;
+  margin: 2% auto 0 auto;
+  width: 100px;
+}
+.copyright {
+  clear: both;
+  display: block;
+  width: auto;
+  margin: auto;
+  text-align: center;
+  padding-top: 2%;
+  font-size: 0.9em;
+
+  @include tablet {
+    font-size: 1em;
+  }
+}
+.copyright span {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  display: inline-block;
+}
+.copyright:before,
+.copyright:after {
+  content: '';
+  display: inline-block;
+  vertical-align: top;
+  width: 5%;
+  height: 1px;
+  background: #FAFAFA;
+  opacity: .8;
+  position: relative;
+  top: .65em;
+  margin: 0 5%;
+
+  @include tablet {
+    width: 20%;
+  }
+}
+.addthis-mobile-shim {
+  display: block;
+  width: 100%;
+  height: 45px;
+
+  @include desktop {
+    display: none;
+    height: 0;
+  }
+}
+.egg {
+  display: block;
+  width: 50%;
+  font-size: 0.5em;
+  text-align: center;
+  margin: 1% auto !important;
+}
+.play-button {
+  height: 40px;
+  width: 65px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10.5px;
+    left: 24px;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 9.5px 0 9.5px 17px;
+    border-color: transparent transparent transparent rgba(0, 173, 239, 0.7);
+  }
+
+  &:hover {
+    background: rgba(0, 173, 239, 1);
+
+    &:after {
+      border-color: transparent transparent transparent rgba(255, 255, 255, 1);
+    }
+  }
+}
+
+// Integrations/Widgets
+
+.twitter-timeline {
+  height: 350px !important;
+  display: block !important;
+  margin: 0 auto 2% auto !important;
+}

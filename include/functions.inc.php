@@ -3,7 +3,7 @@
  * Functions Toolbox - The brains of the operation.
  *
  * @package ChristopherL.com
- * @copyright 2016 ChristopherL (https://github.com/chrislarrycarl)
+ * @copyright 2016-2017 ChristopherL (https://github.com/chrislarrycarl)
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -28,10 +28,13 @@ function smarty_scaffolding() {
     $smarty->setCompileDir($config['smarty']['compile_dir']);
     $smarty->setCacheDir($config['smarty']['cache_dir']);
     $smarty->caching = $config['smarty']['cache'];
+    $smarty->cache_lifetime = $config['smarty']['cache_lifetime'];
     $smarty->debugging = $config['smarty']['debug'];
 
     // Initialize Page settings from $config
-    $smarty->assign('version', $config['version']);
+    $smarty->assign('site_version', $config['site_version']);
+    $smarty->assign('css_version', sha1_file('css/styles.css'));
+    $smarty->assign('js_version', sha1_file('js/global.min.js'));
     $smarty->assign('site_domain', $config['site_domain']);
     $smarty->assign('site_root', $config['site_root']);
     $smarty->assign('a_b_testing', $config['a_b_testing']);

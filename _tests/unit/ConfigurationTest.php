@@ -16,7 +16,7 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(20, count($config), 'Incorrect number of settings in $config array.');
 
         // verify config array keys are named as expected
-        $this->assertTrue(array_key_exists('version', $config), '$config element version missing.');
+        $this->assertTrue(array_key_exists('site_version', $config), '$config element version missing.');
         $this->assertTrue(array_key_exists('site_domain', $config), '$config element site_domain missing.');
         $this->assertTrue(array_key_exists('site_root', $config), '$config element site_root missing.');
         $this->assertTrue(array_key_exists('dev', $config), '$config element dev missing.');
@@ -39,10 +39,11 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
 
         // verify smarty config element is an array and has the proper number of settings
         $this->assertTrue(is_array($config['smarty']), '$config smarty settings array missing.');
-        $this->assertEquals(5, count($config['smarty']), 'Incorrect number of smarty settings in $config smarty array.');
+        $this->assertEquals(6, count($config['smarty']), 'Incorrect number of smarty settings in $config smarty array.');
 
         // verify smarty config array elements are named as expected
         $this->assertTrue(array_key_exists('cache', $config['smarty']), '$config smarty element cache missing.');
+        $this->assertTrue(array_key_exists('cache_lifetime', $config['smarty']), '$config smarty element cache_lifetime missing.');
         $this->assertTrue(array_key_exists('debug', $config['smarty']), '$config smarty element debug missing.');
         $this->assertTrue(array_key_exists('template_dir', $config['smarty']), '$config smarty element template_dir missing.');
         $this->assertTrue(array_key_exists('compile_dir', $config['smarty']), '$config smarty element compile_dir missing.');

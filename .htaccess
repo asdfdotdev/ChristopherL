@@ -2,10 +2,15 @@
 # * Apache Distributed Config File - Cool nerd stuff.
 # *
 # * @package ChristopherL.com
-# * @copyright 2016 ChristopherL (https://github.com/chrislarrycarl)
+# * @copyright 2016-2017 ChristopherL (https://github.com/chrislarrycarl)
 # * @license http://www.gnu.org/licenses/gpl-2.0.html
 # */
 
+<IfModule mod_headers.c>
+    Header set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set X-Content-Type-Options "nosniff"
+</IfModule>
 
 # Get fancy with rewrites
 <IfModule mod_rewrite.c>
@@ -23,7 +28,7 @@
 
 # Shrink it down
 <IfModule mod_deflate.c>
-    <filesMatch "\.(txt|xml|rss|js|css|html|php|png|jpg|jpeg)$">
+    <filesMatch "\.(txt|xml|rss|js|css|html|php|jpg|jpeg)$">
         SetOutputFilter DEFLATE
     </filesMatch>
 </IfModule>

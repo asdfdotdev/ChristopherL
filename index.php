@@ -3,7 +3,7 @@
  * Our Homepage - Where the magic happens.
  *
  * @package ChristopherL.com
- * @copyright 2016 ChristopherL (https://github.com/chrislarrycarl)
+ * @copyright 2016-2017 ChristopherL (https://github.com/chrislarrycarl)
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -87,7 +87,8 @@ $content = <<<HTML
         width="560" 
         height="315"
         allowfullscreen
-        id="fl1" class="fl"></iframe>
+        id="fl1" class="fl"
+        sandbox></iframe>
 HTML;
 $smarty->assign('content', smarty_content($content));
 
@@ -98,4 +99,4 @@ smarty_smoosh();
 
 
 // Output the page
-$smarty->display('base.tpl');
+$smarty->display('base.tpl', 'homepage');
