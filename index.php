@@ -88,7 +88,7 @@ $content = <<<HTML
         height="315"
         allowfullscreen
         id="fl1" class="fl"
-        sandbox></iframe>
+        sandbox="allow-same-origin allow-scripts"></iframe>
 HTML;
 $smarty->assign('content', smarty_content($content));
 
