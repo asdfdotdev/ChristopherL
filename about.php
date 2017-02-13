@@ -125,7 +125,7 @@ $content = <<<HTML
                 and made no money. A key distinction to fellow bubble era darlings, however, is that ChristopherL was a student homepage.
             </p>
             <p>
-                Nearly 20 years, 3,000 miles, 8 revisions, and a short hiatus later <a href="https://web.archive.org/web/20160111112430*/http://christopherl.com/" target="_blank">the journey continues</a>.
+                Nearly 20 years, 3,500 miles, 8.5 revisions, and a short hiatus later <a href="https://web.archive.org/web/20160111112430*/http://christopherl.com/" target="_blank">the journey continues</a>.
             </p>
         </div>
     </section>

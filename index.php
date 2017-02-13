@@ -48,7 +48,7 @@ $content = <<<HTML
             <h1>Greetings &amp; Salutations</h1>
             <p>
                 It's a big internet out there, thank you for visiting this little corner of it. Since you're here you may find yourself asking,
-                <i>"What is ChristopherL?"</i> An idea? A dream? A vision? The truth? It's all these things and more.
+                <i>"What is ChristopherL?"</i> An idea? A dream? A vision?...The truth is, it's all these things, and much more.
             </p>
             <p>
                 We're stoked for an opportunity to help you get to know ChristopherL better. So pull up a chair, get comfortable, 

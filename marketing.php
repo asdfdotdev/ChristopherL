@@ -51,9 +51,9 @@ $content = <<<HTML
                 title="A Trip Down Memory Lane"
                 width="300">
             <p>
-                Data obsessed, metric driven, and content focused. Modern marketing is all this and more. Gone are the days of
-                marketing being a tool for simply talking to (or at) clients. We believe good marketing is about storytelling,
-                and clients are an integral party of any good brand story.
+                Data obsessed, customer driven, and metric focused. Modern marketing truly lives at the corner of technology and 
+                liberal arts. Gone are the days of marketing being a tool for simply talking to (or at) clients. At ChristopherL 
+                we believe good marketing is about storytelling, and clients are the foundation of any good brand story.
             </p>
             
             <h2>Christopherl <span class="hidden-phone">For Your</span> Url</h2>

@@ -51,21 +51,22 @@ $content = <<<HTML
                 title="Poet At Work"
                 width="300">
             <p>
-                Long ago, a now ubiquitous <a href="https://wordpress.org/" target="_blank">blogging software</a> project popularized the phrase
-                <i>code is poetry</i>. And we believe it should be. Creating software is not dissimilar to creating art. The software development process
+                Long ago a, now ubiquitous, <a href="https://wordpress.org/" target="_blank">blogging software</a> project popularized the phrase
+                <i>code is poetry</i>. And we at ChristopherL believe that it should be. Creating software is not dissimilar to creating art. The software development process
                 is a journey and the poetry of source code tells the story of that journey, and the people who share it.
             </p>
             <h2>Open Source</h2>
             <p>
-                At ChristopherL we want to share our journey with as many people as possible, in our own small way, which is why we release
-                our projects as open source.
+                At ChristopherL we want to share our journey with as many people as possible, in our own small way, which is why we've release
+                these projects as open source.
             </p>
             <p>All of the following are available for you to enjoy for free, <a href="https://en.wikipedia.org/wiki/Gratis_versus_libre" target="_blank">as in beer and speech</a>.</p>
             <ul>
                 <li><a href="https://github.com/chrislarrycarl/ChristopherL" target="_blank">ChristopherL</a> &ndash; The code that runs this very website. You're using it right now!</li>
-                <li><a href="https://github.com/chrislarrycarl/Helios-Calendar" target="_blank">Helios Calendar</a> &ndash; A once grand web calendar.</li>
+                <li><a href="https://github.com/chrislarrycarl/Helios-Calendar" target="_blank">Helios Calendar</a> &ndash; A once grand web calendar, now filled with nostalgia.</li>
                 <li><a href="https://github.com/chrislarrycarl/m2" target="_blank">M2</a> &ndash; Quick and easy basic math flash cards.</li>
-                <li><a href="https://github.com/chrislarrycarl/cl_session" target="_blank">cl_session</a> &ndash; An easy to use PHP session class.</li>
+                <li><a href="https://github.com/chrislarrycarl/cl_session" target="_blank">cl_session</a> &ndash; A friendly PHP session class.</li>
+                <li><a href="https://github.com/chrislarrycarl/dots" target="_blank">dots</a> - A collection of odds and ends to help make machine setup easier.</li>
             </ul>
         </div>
     </section>
