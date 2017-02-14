@@ -17,30 +17,33 @@ require_once('include/functions.inc.php');
 require_once('include/libs/smarty/Smarty.class.php');
 
 
-// Instantiate Smarty Class and Initalize Global Config
+// Instantiate Smarty Class then build page if not cached
 $smarty = new Smarty();
-smarty_scaffolding($smarty, $config);
+$cache_id = 'contact';
+
+if (!$smarty->isCached('base.tpl', $cache_id)) {
+    smarty_scaffolding($smarty, $config);
 
 
-// Create Meta & Page Settings
-$smarty->assign('page_title', 'Infrequently Responding to Email, Since 1999 :: ChristopherL');
-$smarty->assign('page_desc', "There's no shortage of ways to contact ChristopherL. Except on Facebook. Don't bother with that.");
-$smarty->assign('page_url', '/contact');
-$smarty->assign('active_nav', 'contact');
+    // Create Meta & Page Settings
+    $smarty->assign('page_title', 'Infrequently Responding to Email, Since 1999 :: ChristopherL');
+    $smarty->assign('page_desc', "There's no shortage of ways to contact ChristopherL. Except on Facebook. Don't bother with that.");
+    $smarty->assign('page_url', '/contact');
+    $smarty->assign('active_nav', 'contact');
 
 
-// Social Images
-$smarty->assign('image_facebook', '/img/social/contact.jpg');
-$smarty->assign('image_twitter', '/img/social/contact.jpg');
+    // Social Images
+    $smarty->assign('image_facebook', '/img/social/contact.jpg');
+    $smarty->assign('image_twitter', '/img/social/contact.jpg');
 
 
-// recaptcha elements
-$captcha_challenge = $captcha_scripts = '';
+    // recaptcha elements
+    $captcha_challenge = $captcha_scripts = '';
 
-if ($config['recaptcha_active'] && $config['recaptcha_site_key'] && $config['recaptcha_secret_key']) {
-    $captcha_challenge = '<div id="g-recaptcha" class="g-recaptcha" data-sitekey="'.$config['recaptcha_site_key'].'"></div>';
+    if ($config['recaptcha_active'] && $config['recaptcha_site_key'] && $config['recaptcha_secret_key']) {
+        $captcha_challenge = '<div id="g-recaptcha" class="g-recaptcha" data-sitekey="'.$config['recaptcha_site_key'].'"></div>';
 
-    $captcha_scripts = <<<HTML
+        $captcha_scripts = <<<HTML
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
 (function($){
@@ -97,17 +100,16 @@ if ($config['recaptcha_active'] && $config['recaptcha_site_key'] && $config['rec
 }(jQuery));
 </script>
 HTML;
-}
+    }
 
+    $smarty->assign('head_extras', '');
+    $smarty->assign('body_header_extras', '');
+    $smarty->assign('body_footer_extras', smarty_content($captcha_scripts));
 
-$smarty->assign('head_extras', '');
-$smarty->assign('body_header_extras', '');
-$smarty->assign('body_footer_extras', smarty_content($captcha_scripts));
+    $footer_cta = newsletter_subscribe();
 
-$footer_cta = newsletter_subscribe();
-
-// Page Content
-$content = <<<HTML
+    // Page Content
+    $content = <<<HTML
     <section>
         <div class="the-outer-limits">
             <h1>Connect <span class="hidden-phone">with Christopherl</span></h1>
@@ -168,13 +170,13 @@ $content = <<<HTML
     
     {$footer_cta}
 HTML;
-$smarty->assign('content', smarty_content($content));
+    $smarty->assign('content', smarty_content($content));
 
 
-// Smoosh it all down, this will make viewing the page source a pain for people
-// but will save literally 10 of milliseconds in page download time.
-smarty_smoosh();
-
+    // Smoosh it all down, this will make viewing the page source a pain for people
+    // but will save literally 10 of milliseconds in page download time.
+    smarty_smoosh();
+}
 
 // Output the page
-$smarty->display('base.tpl', 'contact');
+$smarty->display('base.tpl', $cache_id);

@@ -17,30 +17,33 @@ require_once('include/functions.inc.php');
 require_once('include/libs/smarty/Smarty.class.php');
 
 
-// Instantiate Smarty Class and Initalize Global Config
+// Instantiate Smarty Class then build page if not cached
 $smarty = new Smarty();
-smarty_scaffolding($smarty, $config);
+$cache_id = 'about';
+
+if (!$smarty->isCached('base.tpl', $cache_id)) {
+    smarty_scaffolding($smarty, $config);
 
 
-// Create Meta & Page Settings
-$smarty->assign('page_title', 'Not New Here, Since 1999 :: ChristopherL');
-$smarty->assign('page_desc', "Sure we're a little weird, but in a 'nice once you get to know us' kind of way. So, get to know ChristopherL.");
-$smarty->assign('page_url', '/about');
-$smarty->assign('active_nav', 'about');
+    // Create Meta & Page Settings
+    $smarty->assign('page_title', 'Not New Here, Since 1999 :: ChristopherL');
+    $smarty->assign('page_desc', "Sure we're a little weird, but in a 'nice once you get to know us' kind of way. So, get to know ChristopherL.");
+    $smarty->assign('page_url', '/about');
+    $smarty->assign('active_nav', 'about');
 
 
-// Social Images
-$smarty->assign('image_facebook', '/img/social/about.jpg');
-$smarty->assign('image_twitter', '/img/social/about.jpg');
+    // Social Images
+    $smarty->assign('image_facebook', '/img/social/about.jpg');
+    $smarty->assign('image_twitter', '/img/social/about.jpg');
 
 
-// Optional Extras
-$smarty->assign('head_extras', '');
-$smarty->assign('body_header_extras', '');
+    // Optional Extras
+    $smarty->assign('head_extras', '');
+    $smarty->assign('body_header_extras', '');
 
 
-// Google Maps (http://www.mapstylr.com/style/subtle/)
-$body_footer = <<<HTML
+    // Google Maps (http://www.mapstylr.com/style/subtle/)
+    $body_footer = <<<HTML
 <script>
 function initMap() {
 
@@ -106,12 +109,12 @@ function initMap() {
 <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap&key={$config['google_maps_key']}"></script>
 HTML;
 
-$smarty->assign('body_footer_extras', smarty_content($body_footer));
+    $smarty->assign('body_footer_extras', smarty_content($body_footer));
 
-$footer_cta = newsletter_subscribe();
+    $footer_cta = newsletter_subscribe();
 
-// Page Content
-$content = <<<HTML
+    // Page Content
+    $content = <<<HTML
     <section>
         <div class="the-outer-limits">
             <h1><span class="hidden-phone">From</span> Humble Beginings</h1>
@@ -133,13 +136,13 @@ $content = <<<HTML
     
     {$footer_cta}
 HTML;
-$smarty->assign('content', smarty_content($content));
+    $smarty->assign('content', smarty_content($content));
 
 
-// Smoosh it all down, this will make viewing the page source a pain for people
-// but will save literally 10 of milliseconds in page download time.
-smarty_smoosh();
-
+    // Smoosh it all down, this will make viewing the page source a pain for people
+    // but will save literally 10 of milliseconds in page download time.
+    smarty_smoosh();
+}
 
 // Output the page
-$smarty->display('base.tpl', 'about');
+$smarty->display('base.tpl', $cache_id);

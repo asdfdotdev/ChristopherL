@@ -17,32 +17,35 @@ require_once('include/functions.inc.php');
 require_once('include/libs/smarty/Smarty.class.php');
 
 
-// Instantiate Smarty Class and Initalize Global Config
+// Instantiate Smarty Class then build page if not cached
 $smarty = new Smarty();
-smarty_scaffolding($smarty, $config);
+$cache_id = 'marketing';
+
+if (!$smarty->isCached('base.tpl', $cache_id)) {
+    smarty_scaffolding($smarty, $config);
 
 
-// Create Meta & Page Settings
-$smarty->assign('page_title', 'Inbound and Down, Since 1999 :: ChristopherL');
-$smarty->assign('page_desc', "Automation and analytics are no longer the exclusive playground of nerds. It's ChristopherL's playground. You're invited to join us on the monkey bars.");
-$smarty->assign('page_url', '/marketing');
-$smarty->assign('active_nav', 'marketing');
+    // Create Meta & Page Settings
+    $smarty->assign('page_title', 'Inbound and Down, Since 1999 :: ChristopherL');
+    $smarty->assign('page_desc', "Automation and analytics are no longer the exclusive playground of nerds. It's ChristopherL's playground. You're invited to join us on the monkey bars.");
+    $smarty->assign('page_url', '/marketing');
+    $smarty->assign('active_nav', 'marketing');
 
 
-// Social Images
-$smarty->assign('image_facebook', '/img/social/marketing.jpg');
-$smarty->assign('image_twitter', '/img/social/marketing.jpg');
+    // Social Images
+    $smarty->assign('image_facebook', '/img/social/marketing.jpg');
+    $smarty->assign('image_twitter', '/img/social/marketing.jpg');
 
 
-// Optional Extras
-$smarty->assign('head_extras', '');
-$smarty->assign('body_header_extras', '');
-$smarty->assign('body_footer_extras', '');
+    // Optional Extras
+    $smarty->assign('head_extras', '');
+    $smarty->assign('body_header_extras', '');
+    $smarty->assign('body_footer_extras', '');
 
-$footer_cta = newsletter_subscribe();
+    $footer_cta = newsletter_subscribe();
 
-// Page Content (Use regex to remove newline characters.
-$content = <<<HTML
+    // Page Content (Use regex to remove newline characters.
+    $content = <<<HTML
     <section class="image-right">
         <div class="the-outer-limits">
             <h1>More Than <span class="hidden-phone">Just</span> Tshirts</h1>
@@ -105,13 +108,13 @@ $content = <<<HTML
         <span>but cool tshirts are still important :)</span>
     </div>
 HTML;
-$smarty->assign('content', smarty_content($content));
+    $smarty->assign('content', smarty_content($content));
 
 
-// Smoosh it all down, this will make viewing the page source a pain for people
-// but will save literally 10 of milliseconds in page download time.
-smarty_smoosh();
-
+    // Smoosh it all down, this will make viewing the page source a pain for people
+    // but will save literally 10 of milliseconds in page download time.
+    smarty_smoosh();
+}
 
 // Output the page
-$smarty->display('base.tpl', 'marketing');
+$smarty->display('base.tpl', $cache_id);

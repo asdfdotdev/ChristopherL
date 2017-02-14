@@ -17,34 +17,36 @@ require_once('include/functions.inc.php');
 require_once('include/libs/smarty/Smarty.class.php');
 
 
-// Instantiate Smarty Class and Initalize Global Config
+// Instantiate Smarty Class then build page if not cached
 $smarty = new Smarty();
-smarty_scaffolding($smarty, $config);
+$cache_id = '404';
+
+if (!$smarty->isCached('base.tpl', $cache_id)) {
+    smarty_scaffolding($smarty, $config);
+
+    // Create Meta & Page Settings
+    $smarty->assign('page_title', 'You must be lost. :: ChristopherL');
+    $smarty->assign('page_desc', 'I do not even know why we wrote this page description. Nobody should ever even see it...');
+
+    // don't set page url for 404 pages, active_nav also controls hero image so that should be set
+    $smarty->assign('page_url', '');
+    $smarty->assign('active_nav', '404');
 
 
-// Create Meta & Page Settings
-$smarty->assign('page_title', 'You must be lost. :: ChristopherL');
-$smarty->assign('page_desc', 'I do not even know why we wrote this page description. Nobody should ever even see it...');
-
-// don't set page url for 404 pages, active_nav also controls hero image so that should be set
-$smarty->assign('page_url', '');
-$smarty->assign('active_nav', '404');
+    // Social Images
+    $smarty->assign('image_facebook', '/img/social/404.jpg');
+    $smarty->assign('image_twitter', '/img/social/404.jpg');
 
 
-// Social Images
-$smarty->assign('image_facebook', '/img/social/404.jpg');
-$smarty->assign('image_twitter', '/img/social/404.jpg');
+    // Optional Extras
+    $smarty->assign('head_extras', '');
+    $smarty->assign('body_header_extras', '');
+    $smarty->assign('body_footer_extras', '');
 
+    $footer_cta = newsletter_subscribe();
 
-// Optional Extras
-$smarty->assign('head_extras', '');
-$smarty->assign('body_header_extras', '');
-$smarty->assign('body_footer_extras', '');
-
-$footer_cta = newsletter_subscribe();
-
-// Page Content (Use regex to remove newline characters.
-$content = <<<HTML
+    // Page Content (Use regex to remove newline characters.
+    $content = <<<HTML
     <section>
         <div class="the-outer-limits">
             <h1><span class="hidden-phone">Uh&hellip;</span>Hello There?</h1>
@@ -83,13 +85,13 @@ $content = <<<HTML
     
     {$footer_cta}
 HTML;
-$smarty->assign('content', smarty_content($content));
+    $smarty->assign('content', smarty_content($content));
 
-
-// Smoosh it all down, this will make viewing the page source a pain for people
-// but will save literally 10 of milliseconds in page download time.
-smarty_smoosh();
+    // Smoosh it all down, this will make viewing the page source a pain for people
+    // but will save literally 10 of milliseconds in page download time.
+    smarty_smoosh();
+}
 
 
 // Output the page
-$smarty->display('base.tpl', '404');
+$smarty->display('base.tpl', $cache_id);

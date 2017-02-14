@@ -17,32 +17,35 @@ require_once('include/functions.inc.php');
 require_once('include/libs/smarty/Smarty.class.php');
 
 
-// Instantiate Smarty Class and Initalize Global Config
+// Instantiate Smarty Class then build page if not cached
 $smarty = new Smarty();
-smarty_scaffolding($smarty, $config);
+$cache_id = 'development';
+
+if (!$smarty->isCached('base.tpl', $cache_id)) {
+    smarty_scaffolding($smarty, $config);
 
 
-// Create Meta & Page Settings
-$smarty->assign('page_title', 'Poetic Web Development, Since 1999 :: ChristopherL');
-$smarty->assign('page_desc', 'Codetry® lives at the intersection of art and technology. At ChristopherL we call that intersection home, and have done so for nearly two decades.');
-$smarty->assign('page_url', '/development');
-$smarty->assign('active_nav', 'development');
+    // Create Meta & Page Settings
+    $smarty->assign('page_title', 'Poetic Web Development, Since 1999 :: ChristopherL');
+    $smarty->assign('page_desc', 'Codetry® lives at the intersection of art and technology. At ChristopherL we call that intersection home, and have done so for nearly two decades.');
+    $smarty->assign('page_url', '/development');
+    $smarty->assign('active_nav', 'development');
 
 
-// Social Images
-$smarty->assign('image_facebook', '/img/social/development.jpg');
-$smarty->assign('image_twitter', '/img/social/development.jpg');
+    // Social Images
+    $smarty->assign('image_facebook', '/img/social/development.jpg');
+    $smarty->assign('image_twitter', '/img/social/development.jpg');
 
 
-// Optional Extras
-$smarty->assign('head_extras', '');
-$smarty->assign('body_header_extras', '');
-$smarty->assign('body_footer_extras', '');
+    // Optional Extras
+    $smarty->assign('head_extras', '');
+    $smarty->assign('body_header_extras', '');
+    $smarty->assign('body_footer_extras', '');
 
-$footer_cta = newsletter_subscribe();
+    $footer_cta = newsletter_subscribe();
 
-// Page Content
-$content = <<<HTML
+    // Page Content
+    $content = <<<HTML
     <section class="image-right">
         <div class="the-outer-limits">
             <h1>Working the 1s and 0s</h1>
@@ -103,13 +106,13 @@ $content = <<<HTML
         class="fl" 
         width="500">
 HTML;
-$smarty->assign('content', smarty_content($content));
+    $smarty->assign('content', smarty_content($content));
 
 
-// Smoosh it all down, this will make viewing the page source a pain for people
-// but will save literally 10 of milliseconds in page download time.
-smarty_smoosh();
-
+    // Smoosh it all down, this will make viewing the page source a pain for people
+    // but will save literally 10 of milliseconds in page download time.
+    smarty_smoosh();
+}
 
 // Output the page
-$smarty->display('base.tpl', 'development');
+$smarty->display('base.tpl', $cache_id);
