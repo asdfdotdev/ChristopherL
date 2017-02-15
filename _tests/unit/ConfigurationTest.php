@@ -13,13 +13,12 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
         require('include/config.inc.php');
 
         // verify we have the correct number of config array elements
-        $this->assertEquals(20, count($config), 'Incorrect number of settings in $config array.');
+        $this->assertEquals(19, count($config), 'Incorrect number of settings in $config array.');
 
         // verify config array keys are named as expected
         $this->assertTrue(array_key_exists('site_version', $config), '$config element version missing.');
         $this->assertTrue(array_key_exists('site_domain', $config), '$config element site_domain missing.');
         $this->assertTrue(array_key_exists('site_root', $config), '$config element site_root missing.');
-        $this->assertTrue(array_key_exists('dev', $config), '$config element dev missing.');
         $this->assertTrue(array_key_exists('compress', $config), '$config element compress missing.');
         $this->assertTrue(array_key_exists('send_to_address', $config), '$config element send_to_address missing.');
         $this->assertTrue(array_key_exists('optimizely_id', $config), '$config element optimizely_id missing.');

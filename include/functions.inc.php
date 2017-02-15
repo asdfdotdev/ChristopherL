@@ -38,7 +38,6 @@ function smarty_scaffolding() {
     $smarty->assign('site_domain', $config['site_domain']);
     $smarty->assign('site_root', $config['site_root']);
     $smarty->assign('a_b_testing', $config['a_b_testing']);
-    $smarty->assign('is_dev', $config['dev']);
     $smarty->assign('google_analytics_id', $config['google_analytics_id']);
     $smarty->assign('addthis_id', $config['addthis_id']);
     $smarty->assign('optimizely_id', $config['optimizely_id']);

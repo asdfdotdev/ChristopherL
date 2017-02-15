@@ -12,9 +12,11 @@ $config = array(
     // used for cache busting in query string of core CSS & JS files, increment as needed
     'site_version'               => '0.3',
 
+
     // Some resources (canonical url, social sharing images) require a complete URL
     // complete your site domain to accomodate this.
     'site_domain'           => 'http://christopherl.com',
+
 
     // Site root, this should be blank if you're working from the literal root,
     // however, if you need to work in a subdirectory this setting allows you
@@ -24,11 +26,6 @@ $config = array(
     //
     // Ex) To host from http://mycoolsite.com/christopherl use a site_root value of '/christopherl'
     'site_root'             => '',
-
-
-    // 0 = development, don't enable JS analytics libraries
-    // 1 = production, enable JS analytics libraries
-    'dev'                   =>  0,
 
 
     // 0 = output markup as-is
@@ -89,9 +86,11 @@ $config['schema'] = array(
     // 1 = Person (For a personal site)
     'type'                  => 1,
 
+
     // Shared properties for both schemas
     'name'                  => '',
     'telephone'             => '',
+
 
     // Physical Location / Postal Address
     'street'                => '',
@@ -99,7 +98,8 @@ $config['schema'] = array(
     'region'                => '',
     'postal_code'           => '',
     'country'               => '',
-    
+
+
     // Social profile URLs (used for "same as" references, add additional entries as needed)
     'same_as'               => array(
                                 '',
@@ -117,6 +117,7 @@ $config['smarty'] = array(
     'cache'                 =>  0,
     'cache_lifetime'        =>  604800,
     'debug'                 =>  0,
+
 
     // Use path from this file to templates directory
     // Make sure you create these directories if they don't exist
