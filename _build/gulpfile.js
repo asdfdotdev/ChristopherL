@@ -36,7 +36,6 @@ gulp.task('styles', function () {
         .pipe(sourcemaps.init())
         .pipe(order([
             // third party libraries
-            "google_fonts",
             "media.scss",
             "normalize.scss",
             "skeleton.scss",
