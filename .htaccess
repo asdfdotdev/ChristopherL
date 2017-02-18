@@ -6,11 +6,13 @@
 # * @license http://www.gnu.org/licenses/gpl-2.0.html
 # */
 
+
 <IfModule mod_headers.c>
     Header set X-Frame-Options DENY
     Header always set X-XSS-Protection "1; mode=block"
     Header always set X-Content-Type-Options "nosniff"
 </IfModule>
+
 
 # Get fancy with rewrites
 <IfModule mod_rewrite.c>
