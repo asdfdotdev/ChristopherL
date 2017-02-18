@@ -18,9 +18,9 @@ Pabst Blue Ribbon - Our best code is fueled by these guys
 
 
 /* SITE */
-Last update: 2017/01/29
+Last update: 2017/02/18
 Standards: HTML5, CSS3, Awesome
 Components: Smarty, jQuery, Normalize.css, Skeleton.css, Featherlight.js
 Services: Google Analytics, AddThis, Optimizely, Hotjar, Mapstylr
 Software: PhpStorm, Photoshop, Firefox, Git, Transmit
-Hosting: MediaTemple
+Hosting: Linode
