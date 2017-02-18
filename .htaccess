@@ -15,7 +15,7 @@
 # Get fancy with rewrites
 <IfModule mod_rewrite.c>
     RewriteEngine on
-    RewriteCond %{HTTP_HOST} ^www\.christopherl\.com [NC]
+    RewriteCond %{HTTP_HOST} ^(.+)\.christopherl\.com [NC]
     RewriteRule ^(.*)$ http://christopherl.com/$1 [L,R=301]
 
     RewriteCond %{REQUEST_FILENAME} !-d
