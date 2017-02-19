@@ -58,7 +58,6 @@ class SystemRequirementsTest extends PHPUnit_Framework_TestCase
             '_build/package.json',
             '_build/sass/christopherl.scss',
             '_build/sass/featherlight.scss',
-            '_build/sass/google_fonts.scss',
             '_build/sass/mailchimp.scss',
             '_build/sass/media.scss',
             '_build/sass/normalize.scss',
