@@ -135,7 +135,7 @@ HTML;
             
             <h2>Good Old Email</h2>
             <p>
-                But email isn't a secure medium you say? This page doesn't even have SSL you say? Paranoid much?
+                But email isn't a secure medium you say?
             </p>
             <p>
                 OK. Calm down Alan Westin, if it makes you feel better here's <a href="download/christopherl_public_key.asc">our public key</a>.
