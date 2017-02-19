@@ -155,7 +155,7 @@
     {*
         Global JavaScript
     *}
-    <script async src="{$site_root}/js/global.min.js?v={$js_version}"></script>
+    <script src="{$site_root}/js/global.min.js?v={$js_version}"></script>
 
     {*
         AddThis Sharing Code
