@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://christopherl.com/</loc>
+        <loc>https://christopherl.com/</loc>
     </url>
     <url>
-        <loc>http://christopherl.com/development</loc>
+        <loc>https://christopherl.com/development</loc>
     </url>
     <url>
-        <loc>http://christopherl.com/marketing</loc>
+        <loc>https://christopherl.com/marketing</loc>
     </url>
     <url>
-        <loc>http://christopherl.com/about</loc>
+        <loc>https://christopherl.com/about</loc>
     </url>
     <url>
-        <loc>http://christopherl.com/contact</loc>
+        <loc>https://christopherl.com/contact</loc>
     </url>
 </urlset>

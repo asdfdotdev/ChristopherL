@@ -1,4 +1,4 @@
 User-Agent: *
 Disallow:
 
-Sitemap: http://christopherl.com/sitemap.xml
+Sitemap: https://christopherl.com/sitemap.xml
