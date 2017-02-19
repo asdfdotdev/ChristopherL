@@ -16,8 +16,11 @@
 
 # Get fancy with rewrites
 <IfModule mod_rewrite.c>
-    RewriteEngine on
+    RewriteEngine On
     RewriteCond %{HTTP_HOST} ^(.+)\.christopherl\.com [NC]
+    RewriteRule ^(.*)$ https://christopherl.com/$1 [L,R=301]
+
+    RewriteCond %{SERVER_PORT} 80
     RewriteRule ^(.*)$ https://christopherl.com/$1 [L,R=301]
 
     RewriteCond %{REQUEST_FILENAME} !-d
