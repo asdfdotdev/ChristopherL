@@ -30,9 +30,9 @@ if (!empty($_POST)) {
             // package form data up form submission data
             $form = package_form_submission($_POST['data']);
 
-            // send email with cleaned form data
-            send_contact_email($form, $response);
-            
+            // send message with cleaned form data
+            send_contact_message($form, $response);
+
             break;
     }
 }

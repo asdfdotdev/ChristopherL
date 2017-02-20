@@ -33,8 +33,19 @@ $config = array(
     'compress'              =>  0,
 
 
-    // Email address that should recieve contact form submissions
-    'send_to_address'       =>  '',
+    // 0 = old timey email
+    // 1 = slack webhook
+    'contact_method'        =>  '0',
+
+
+    // Email address that should recieve contact form submissions, can be left blank if using slack
+    'send_to_address'       =>  'chris@christopherl.com',
+
+
+    // slack webhook settings
+    'slack_channel'         =>  '#',
+    'slack_icon'            =>  ':memo:',
+    'slack_url'             =>  '',
 
 
     // Optimizely Project ID, if blank JavaScript test code will not be enabled.

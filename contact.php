@@ -42,9 +42,10 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
 
     if ($config['recaptcha_active'] && $config['recaptcha_site_key'] && $config['recaptcha_secret_key']) {
         $captcha_challenge = '<div id="g-recaptcha" class="g-recaptcha" data-sitekey="'.$config['recaptcha_site_key'].'"></div>';
+        $captcha_scripts = '<script src="https://www.google.com/recaptcha/api.js"></script>';
+    }
 
-        $captcha_scripts = <<<HTML
-<script src='https://www.google.com/recaptcha/api.js'></script>
+    $contact_javascript = <<<HTML
 <script>
 (function($){
     /*
@@ -71,7 +72,10 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
             .done(function(data) {
                 // handle success response, reset form and recaptcha
                 $('#contact_christopherl').trigger('reset');
-                grecaptcha.reset();
+                
+                if (typeof grecaptcha !== 'undefined') {
+                    grecaptcha.reset();
+                }
                 
                 // update feedback
                 $('#feedback').show();
@@ -100,11 +104,10 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
 }(jQuery));
 </script>
 HTML;
-    }
 
     $smarty->assign('head_extras', '');
     $smarty->assign('body_header_extras', '');
-    $smarty->assign('body_footer_extras', smarty_content($captcha_scripts));
+    $smarty->assign('body_footer_extras', smarty_content($captcha_scripts . $contact_javascript));
 
     $footer_cta = newsletter_subscribe();
 

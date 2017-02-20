@@ -13,14 +13,19 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
         require('include/config.inc.php');
 
         // verify we have the correct number of config array elements
-        $this->assertEquals(19, count($config), 'Incorrect number of settings in $config array.');
+        $this->assertEquals(23, count($config), 'Incorrect number of settings in $config array.');
 
         // verify config array keys are named as expected
         $this->assertTrue(array_key_exists('site_version', $config), '$config element version missing.');
         $this->assertTrue(array_key_exists('site_domain', $config), '$config element site_domain missing.');
         $this->assertTrue(array_key_exists('site_root', $config), '$config element site_root missing.');
         $this->assertTrue(array_key_exists('compress', $config), '$config element compress missing.');
+        $this->assertTrue(array_key_exists('contact_method', $config), '$config element contact_method missing.');
         $this->assertTrue(array_key_exists('send_to_address', $config), '$config element send_to_address missing.');
+
+        $this->assertTrue(array_key_exists('slack_channel', $config), '$config element slack_channel missing.');
+        $this->assertTrue(array_key_exists('slack_icon', $config), '$config element slack_icon missing.');
+        $this->assertTrue(array_key_exists('slack_url', $config), '$config element slack_url missing.');
         $this->assertTrue(array_key_exists('optimizely_id', $config), '$config element optimizely_id missing.');
         $this->assertTrue(array_key_exists('a_b_testing', $config), '$config element a_b_testing missing.');
         $this->assertTrue(array_key_exists('google_analytics_id', $config), '$config element google_analytics_id missing.');

@@ -14,7 +14,7 @@
  * @param array $form       submitted form data ($key = form input id, $value = submitted value)
  * @param $response         reference to ajax.php $response array
  */
-function send_contact_email($form=array(), &$response) {
+function send_contact_message($form=array(), &$response) {
     global $config;
 
     if (!$config['send_to_address']) {
@@ -52,12 +52,37 @@ function send_contact_email($form=array(), &$response) {
         else if (!$form['message']) {
             set_response_error("How can we reply if you don't say anything?", 'message', $response);
         }
-        // looks good, send that email
+        // looks good, send message
         else {
-            $send_result = mail("{$config['send_to_address']}",
-                                "Greetings from ChristopherL",
-                                "{$form['message']}\n\n--------------\n{$form['fullname']}\n{$form['email']}",
-                                "From: {$form['email']}");
+            if (intval($config['contact_method']) == 0) {
+                $send_result = mail("{$config['send_to_address']}",
+                    "Greetings from ChristopherL",
+                    "{$form['message']}\n\n--------------\n{$form['fullname']}\n{$form['email']}",
+                    "From: {$form['email']}");
+            }
+            else {
+                $data = "payload=" . json_encode(array(
+                        "channel"       =>  "{$config['slack_channel']}",
+                        "text"          =>  sprintf("%s Contact Message:\n*Name:* %s\n*Email:* %s\n> %s",
+                                                $config['site_domain'],
+                                                $form['fullname'],
+                                                $form['email'],
+                                                $form['message']
+                                            ),
+                        "icon_emoji"    =>  $config['slack_icon']
+                ));
+
+                $ch = curl_init($config['slack_url']);
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+                if (curl_exec($ch) == 'ok') {
+                    $send_result = true;
+                }
+
+                curl_close($ch);
+            }
 
             // didn't work, have them try again
             if (!$send_result) {
