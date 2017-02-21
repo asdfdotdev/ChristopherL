@@ -39,6 +39,7 @@
     <meta property="og:site_name" content="ChristopherL">
 
     {* Misc Link *}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento|Noto+Sans:400,700">
     <link rel="stylesheet" href="{$site_root}/css/styles.css?v={$css_version}">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <meta name="generator" content="ChristopherL {$site_version}">
