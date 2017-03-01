@@ -37,6 +37,7 @@ function smarty_scaffolding() {
     $smarty->assign('js_version', sha1_file('js/global.min.js'));
     $smarty->assign('site_domain', $config['site_domain']);
     $smarty->assign('site_root', $config['site_root']);
+    $smarty->assign('image_root', complete_url('', 1));
     $smarty->assign('a_b_testing', $config['a_b_testing']);
     $smarty->assign('google_analytics_id', $config['google_analytics_id']);
     $smarty->assign('addthis_id', $config['addthis_id']);
@@ -220,6 +221,27 @@ function newsletter_subscribe() {
     </section>
 HTML;
 
+}
+
+/**
+ * Construct complete url based on current settings.
+ *
+ * @param $path             Path to resource from root
+ * @param $domain           Domain to use (0 = use site domain, 1 = use CDN domain)
+ *
+ * @return string           Complete URL to resource
+ */
+function complete_url($path, $domain) {
+    global $config;
+
+    if ($domain == 0 || $config['cdn_domain'] == '') {
+        $base_url = $config['site_domain'] . $config['site_root'];
+    }
+    else {
+        $base_url = $config['cdn_domain'] . $config['site_root'];
+    }
+
+    return $base_url . $path;
 }
 
 /**

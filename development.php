@@ -30,6 +30,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     $smarty->assign('page_desc', 'Codetry® lives at the intersection of art and technology. At ChristopherL we call that intersection home, and have done so for nearly two decades.');
     $smarty->assign('page_url', '/development');
     $smarty->assign('active_nav', 'development');
+    $smarty->assign('hero_image', complete_url('/img/heros/development.jpg', 1));
 
 
     // Social Images
@@ -43,13 +44,14 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     $smarty->assign('body_footer_extras', '');
 
     $footer_cta = newsletter_subscribe();
+    $image_root = complete_url('', 1);
 
     // Page Content
     $content = <<<HTML
     <section class="image-right">
         <div class="the-outer-limits">
             <h1>Working the 1s and 0s</h1>
-            <img src="img/at-desk.jpg"
+            <img src="{$image_root}/img/at-desk.jpg"
                 alt="A Person Sitting at a Desk"
                 title="Poet At Work"
                 width="300">
@@ -76,22 +78,22 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     <section class="highlight logos">
         <div class="the-outer-limits container row">
             <div class="two columns">
-                <img src="img/logos/php.png" alt="PHP Logo" height="50">
+                <img src="{$image_root}/img/logos/php.png" alt="PHP Logo" height="50">
             </div>
             <div class="two columns">
-                <img src="img/logos/mysql.png" alt="MySQL Logo" height="50">
+                <img src="{$image_root}/img/logos/mysql.png" alt="MySQL Logo" height="50">
             </div>
             <div class="two columns">
-                <img src="img/logos/javascript.png" alt="JavaScript Logo" height="50">
+                <img src="{$image_root}/img/logos/javascript.png" alt="JavaScript Logo" height="50">
             </div>
             <div class="two columns">
-                <img src="img/logos/html_css.png" alt="HTML5 and CSS3 Logos" height="50">
+                <img src="{$image_root}/img/logos/html_css.png" alt="HTML5 and CSS3 Logos" height="50">
             </div>
             <div class="two columns">
-                <img src="img/logos/apache.png" alt="Apache Logo" height="50">
+                <img src="{$image_root}/img/logos/apache.png" alt="Apache Logo" height="50">
             </div>
             <div class="two columns">
-                <img src="img/logos/others_dev.png" alt="Other Development Tool Logos" height="50">
+                <img src="{$image_root}/img/logos/others_dev.png" alt="Other Development Tool Logos" height="50">
             </div>
         </div>
     </section>
@@ -99,7 +101,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     {$footer_cta}
     
     <span class="lightbox egg" data-featherlight="#fl1" data-event="dev easter egg">:)</span>
-    <img src="img/stocking-hat.jpg"
+    <img src="{$image_root}/img/stocking-hat.jpg"
         alt="A Dragon in a Stocking Hat"
         title="It Keeps His Ears Warm While He Codes"
         id="fl1" 

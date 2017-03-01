@@ -28,22 +28,22 @@
     <meta name="twitter:description" content="{$page_desc}">
     <meta name="twitter:creator" content="@chrislarrycarl">
     <meta name="twitter:site" content="@chrislarrycarl">
-    <meta name="twitter:image" content="{$site_domain}{$site_root}{$image_twitter}">
+    <meta name="twitter:image" content="{$image_root}{$image_twitter}">
 
     {* Open Graph data *}
     <meta property="og:title" content="{$page_title}">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{$site_domain}{$site_root}{$page_url}">
-    <meta property="og:image" content="{$site_domain}{$site_root}{$image_facebook}">
+    <meta property="og:image" content="{$image_root}{$image_facebook}">
     <meta property="og:description" content="{$page_desc}">
     <meta property="og:site_name" content="ChristopherL">
 
     {* Misc Link *}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sacramento|Noto+Sans:400,700">
-    <link rel="stylesheet" href="{$site_root}/css/styles.css?v={$css_version}">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="stylesheet" href="{$site_domain}{$site_root}/css/styles.css?v={$css_version}">
+    <link rel="apple-touch-icon" href="{$image_root}/img/apple-touch-icon.png">
     <meta name="generator" content="ChristopherL {$site_version}">
-    <link rel="icon" href="{$site_root}/img/favicon.png">
+    <link rel="icon" href="{$image_root}/img/favicon.png">
     <link rel="author" itemprop="author" href="{$site_domain}{$site_root}/humans.txt">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="{$site_domain}{$site_root}/sitemap.xml">
 
@@ -83,7 +83,7 @@
     <header>
         <div class="the-outer-limits container row">
             <a href="{$site_domain}" data-event="logo">
-                <img src="{$site_root}/img/logo.png" width="200"
+                <img src="{$image_root}/img/logo.png" width="200"
                      alt="ChristopherL Logo"
                      title="Serious Business, Since 1999">
             </a>
@@ -98,7 +98,7 @@
             </nav>
         </div>
     </header>
-    <div class="hero hero_{$active_nav}">&nbsp;</div>
+    <div class="hero hero_{$active_nav}" style="background-image: url({$hero_image});">&nbsp;</div>
 
     {$content}
 
@@ -141,7 +141,7 @@
                 <span>&copy;</span> {date("Y")} ChristopherL - <a href="https://github.com/chrislarrycarl/ChristopherL" target="_blank" title="Download This Website">Code</a>
             </div>
 
-            <img src="{$site_root}/img/footer-head.png"
+            <img src="{$image_root}/img/footer-head.png"
                 alt="ChristopherLs Head"
                 title="Our Mascot"
                 class="head">

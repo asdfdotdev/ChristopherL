@@ -30,6 +30,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     $smarty->assign('page_desc', "Sure we're a little weird, but in a 'nice once you get to know us' kind of way. So, get to know ChristopherL.");
     $smarty->assign('page_url', '/about');
     $smarty->assign('active_nav', 'about');
+    $smarty->assign('hero_image', complete_url('/img/heros/about.jpg', 1));
 
 
     // Social Images
@@ -41,6 +42,8 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     $smarty->assign('head_extras', '');
     $smarty->assign('body_header_extras', '');
 
+    $active_pushpin = complete_url('/img/pushpin.png', 1);
+    $inactive_pushpin = complete_url('/img/pushpin_bw.png', 1);
 
     // Google Maps (http://www.mapstylr.com/style/subtle/)
     $body_footer = <<<HTML
@@ -67,7 +70,7 @@ function initMap() {
         styles: [{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"all","elementType":"all","stylers":[{"saturation":-70},{"lightness":37},{"gamma":1.15}]},{"featureType":"all","elementType":"labels","stylers":[{"visibility":"off"},{"gamma":0.26}]},{"featureType":"road","elementType":"all","stylers":[{"hue":"#ffffff"},{"saturation":0},{"lightness":0},{"gamma":0}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#ffffff"},{"saturation":0},{"lightness":50}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"on"},{"lightness":-50}]},{"featureType":"administrative.province","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"administrative.province","elementType":"labels.text","stylers":[{"lightness":20}]}]
     });
     
-    var icons = {active: 'img/pushpin.png', inactive: 'img/pushpin_bw.png'};
+    var icons = {active: '{$active_pushpin}', inactive: '{$inactive_pushpin}'};
     
     var markers = [
         {

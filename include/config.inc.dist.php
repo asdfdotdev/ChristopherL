@@ -10,12 +10,16 @@
 
 $config = array(
     // used for cache busting in query string of core CSS & JS files, increment as needed
-    'site_version'               => '0.3',
+    'site_version'          => '0.3',
 
 
     // Some resources (canonical url, social sharing images) require a complete URL
     // complete your site domain to accomodate this.
     'site_domain'           => 'http://christopherl.com',
+
+
+    // Upload the /img directory to your cdn maintaining the path structure, set this as the root
+    'cdn_domain'            => 'https://res.cloudinary.com/ddi0971tv/image/upload/v1488338095/',
 
 
     // Site root, this should be blank if you're working from the literal root,

@@ -31,6 +31,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     // don't set page url for 404 pages, active_nav also controls hero image so that should be set
     $smarty->assign('page_url', '');
     $smarty->assign('active_nav', '404');
+    $smarty->assign('hero_image', complete_url('/img/heros/404.jpg', 1));
 
 
     // Social Images
@@ -66,12 +67,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
                 allowfullscreen
                 class="wide-stance"></iframe>
             
-            <h2>Food Porn</h2>
-            <p>
-                Wow, you're still here huh? Well, since you like to scroll why don't you check out this feed of Grade A food porn.
-            </p>
-            <a class="twitter-timeline wide-stance"  href="https://twitter.com/figandsprout" data-widget-id="724603432938545152"></a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <br><br>
         </div>
     </section>
     <section class="highlight">

@@ -30,6 +30,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     $smarty->assign('page_desc', "There's no shortage of ways to contact ChristopherL. Except on Facebook. Don't bother with that.");
     $smarty->assign('page_url', '/contact');
     $smarty->assign('active_nav', 'contact');
+    $smarty->assign('hero_image', complete_url('/img/heros/contact.jpg', 1));
 
 
     // Social Images

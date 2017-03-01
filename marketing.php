@@ -30,6 +30,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     $smarty->assign('page_desc', "Automation and analytics are no longer the exclusive playground of nerds. It's ChristopherL's playground. You're invited to join us on the monkey bars.");
     $smarty->assign('page_url', '/marketing');
     $smarty->assign('active_nav', 'marketing');
+    $smarty->assign('hero_image', complete_url('/img/heros/marketing.jpg', 1));
 
 
     // Social Images
@@ -43,13 +44,14 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     $smarty->assign('body_footer_extras', '');
 
     $footer_cta = newsletter_subscribe();
+    $image_root = complete_url('', 1);
 
     // Page Content (Use regex to remove newline characters.
     $content = <<<HTML
     <section class="image-right">
         <div class="the-outer-limits">
             <h1>More Than <span class="hidden-phone">Just</span> Tshirts</h1>
-            <img src="img/helios_history.png"
+            <img src="{$image_root}/img/helios_history.png"
                 alt="Helios Calendar Logos Through Time"
                 title="A Trip Down Memory Lane"
                 width="300">
@@ -76,22 +78,22 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     <section class="highlight logos">
         <div class="the-outer-limits container row">
             <div class="two columns">
-                <img src="img/logos/salesforce.png" alt="Salesforce Logo" height="50">
+                <img src="{$image_root}/img/logos/salesforce.png" alt="Salesforce Logo" height="50">
             </div>
             <div class="two columns">
-                <img src="img/logos/hubspot.png" alt="HubSpot Logo" height="50">
+                <img src="{$image_root}/img/logos/hubspot.png" alt="HubSpot Logo" height="50">
             </div>
             <div class="two columns">
-                <img src="img/logos/optimizely.png" alt="Optimizely Logo" height="50">
+                <img src="{$image_root}/img/logos/optimizely.png" alt="Optimizely Logo" height="50">
             </div>
             <div class="two columns">
-                <img src="img/logos/analytics.png" alt="Google Analytics Logo" height="50">
+                <img src="{$image_root}/img/logos/analytics.png" alt="Google Analytics Logo" height="50">
             </div>
             <div class="two columns">
-                <img src="img/logos/mailchimp.png" alt="MailChimp Logo" height="50">
+                <img src="{$image_root}/img/logos/mailchimp.png" alt="MailChimp Logo" height="50">
             </div>
             <div class="two columns">
-                <img src="img/logos/others_marketing.png" alt="Other Marketing Tool Logos" height="50">
+                <img src="{$image_root}/img/logos/others_marketing.png" alt="Other Marketing Tool Logos" height="50">
             </div>
         </div>
     </section>
@@ -101,7 +103,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     <span class="lightbox egg" data-featherlight="#fl1" data-event="marketing easter egg">:)</span>
     
     <div id="fl1" class="fl">
-        <img src="img/tshirts.jpg"
+        <img src="{$image_root}/img/tshirts.jpg"
             alt="Helios Calendar TShirts"
             title="Softest Shirt in the World"
             width="500">

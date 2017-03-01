@@ -30,6 +30,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     $smarty->assign('page_desc', 'More than a homepage, ChristopherL has been serious about web development and marketing since 1999. Join us for a look at the brand behind the man.');
     $smarty->assign('page_url', '/');
     $smarty->assign('active_nav', 'home');
+    $smarty->assign('hero_image', complete_url('/img/heros/homepage.jpg', 1));
 
 
     // Social Images
@@ -43,6 +44,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     $smarty->assign('body_footer_extras', '');
 
     $footer_cta = newsletter_subscribe();
+    $image_root = complete_url('', 1);
 
     // Page Content (Use regex to remove newline characters.
     $content = <<<HTML
@@ -57,7 +59,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
                 We're stoked for an opportunity to help you get to know ChristopherL better. So pull up a chair, get comfortable, 
                 and <i>do it</i>.
             </p>
-            <div class="shia">
+            <div class="shia" style="background: url('{$image_root}/img/shia.png');">
                 <div class="play-button" data-featherlight="#fl1" data-event="play pep talk video"></div>
             </div>
         </div>    

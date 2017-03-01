@@ -383,38 +383,16 @@ nav {
     min-height: 350px;
   }
 }
-.hero_home {
-  @extend .hero;
-  background-image: url(../img/heros/homepage.jpg);
-}
-.hero_development {
-  @extend .hero;
-  background-image: url(../img/heros/development.jpg);
-}
-.hero_marketing {
-  @extend .hero;
-  background-image: url(../img/heros/marketing.jpg);
-}
-.hero_about {
-  @extend .hero;
-  background-image: url(../img/heros/about.jpg);
-}
 .hero_contact {
   @extend .hero;
-  background-image: url(../img/heros/contact.jpg);
   background-position: right center;
 
   @include desktop {
     background-position: center center;
   }
 }
-.hero_404 {
-  @extend .hero;
-  background-image: url(../img/heros/404.jpg);
-}
 img {
   max-width: 100%;
-
 }
 section {
   display: block;
@@ -519,7 +497,6 @@ aside.contact {
 }
 .shia {
   width: auto;
-  background: url('../img/shia.png');
   background-repeat: no-repeat;
   width: 160px;
   height: 305px;
