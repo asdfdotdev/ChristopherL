@@ -19,7 +19,7 @@ $config = array(
 
 
     // Upload the /img directory to your cdn maintaining the path structure, set this as the root
-    'cdn_domain'            => 'https://res.cloudinary.com/ddi0971tv/image/upload/v1488338095/',
+    'cdn_domain'            => '',
 
 
     // Site root, this should be blank if you're working from the literal root,

@@ -91,7 +91,6 @@ class SystemRequirementsTest extends PHPUnit_Framework_TestCase
             'img/heros/development.jpg',
             'img/heros/homepage.jpg',
             'img/heros/marketing.jpg',
-            'img/history.jpg',
             'img/logo.png',
             'img/logos/analytics.png',
             'img/logos/apache.png',

@@ -13,16 +13,16 @@ class ConfigurationTest extends PHPUnit_Framework_TestCase
         require('include/config.inc.php');
 
         // verify we have the correct number of config array elements
-        $this->assertEquals(23, count($config), 'Incorrect number of settings in $config array.');
+        $this->assertEquals(24, count($config), 'Incorrect number of settings in $config array.');
 
         // verify config array keys are named as expected
         $this->assertTrue(array_key_exists('site_version', $config), '$config element version missing.');
         $this->assertTrue(array_key_exists('site_domain', $config), '$config element site_domain missing.');
         $this->assertTrue(array_key_exists('site_root', $config), '$config element site_root missing.');
+        $this->assertTrue(array_key_exists('cdn_domain', $config), '$config element cdn_domain missing.');
         $this->assertTrue(array_key_exists('compress', $config), '$config element compress missing.');
         $this->assertTrue(array_key_exists('contact_method', $config), '$config element contact_method missing.');
         $this->assertTrue(array_key_exists('send_to_address', $config), '$config element send_to_address missing.');
-
         $this->assertTrue(array_key_exists('slack_channel', $config), '$config element slack_channel missing.');
         $this->assertTrue(array_key_exists('slack_icon', $config), '$config element slack_icon missing.');
         $this->assertTrue(array_key_exists('slack_url', $config), '$config element slack_url missing.');
