@@ -5,7 +5,7 @@
  * Tests include:
  *  testEmptyRequest            Verifies that a methodless request results in a 404 error response
  */
-class AjaxHandlerTest extends PHPUnit_Framework_TestCase
+class AjaxHandlerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @runInSeparateProcess

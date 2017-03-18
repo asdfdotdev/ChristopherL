@@ -9,8 +9,8 @@
 
 
 $config = array(
-    // used for cache busting in query string of core CSS & JS files, increment as needed
-    'site_version'          => '0.3',
+    // not really that important, make it anything you want (used in generator meta)
+    'site_version'          => '0.4',
 
 
     // Some resources (canonical url, social sharing images) require a complete URL

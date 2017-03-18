@@ -33,8 +33,8 @@ function smarty_scaffolding() {
 
     // Initialize Page settings from $config
     $smarty->assign('site_version', $config['site_version']);
-    $smarty->assign('css_version', sha1_file('css/styles.css'));
-    $smarty->assign('js_version', sha1_file('js/global.min.js'));
+    $smarty->assign('css_version', hash_file('sha1', 'css/styles.css'));
+    $smarty->assign('js_version', hash_file('sha1', 'js/global.min.js'));
     $smarty->assign('site_domain', $config['site_domain']);
     $smarty->assign('site_root', $config['site_root']);
     $smarty->assign('image_root', complete_url('', 1));

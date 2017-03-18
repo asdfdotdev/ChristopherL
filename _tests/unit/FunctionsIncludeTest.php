@@ -7,7 +7,7 @@
  *  testResponseFeedback            Verifies feedback is set in response correctly
  *  testPackageFormSubmission       Verifies correct form submission filtering and packaging
  */
-class FunctionsIncludeTest extends PHPUnit_Framework_TestCase
+class FunctionsIncludeTest extends PHPUnit\Framework\TestCase
 {
     public function testResponseError()
     {

@@ -8,18 +8,11 @@
  *  testSmartyVersion       Verifies Smarty is version 3 or newer
  *  testCompleteInstall     Verifies all files exist
  */
-class SystemRequirementsTest extends PHPUnit_Framework_TestCase
+class SystemRequirementsTest extends PHPUnit\Framework\TestCase
 {
     public function testPHPUnitVersion()
     {
-        // we'd really prefer you use PHPUnit 5
-        if (floatval(PHPUnit_Runner_Version::id() > 4.9)) {
-            $this->assertGreaterThanOrEqual(5.3, floatval(PHPUnit_Runner_Version::id()), '---Please upgrade to PHPUnit 5.3 or newer.');
-        }
-        // but for you old-timers 4.8 still works, probably
-        else {
-            $this->assertGreaterThanOrEqual(4.8, floatval(PHPUnit_Runner_Version::id()), '---Please upgrade to PHPUnit 4.8 or newer.');
-        }
+        $this->assertGreaterThanOrEqual(6.0, floatval(PHPUnit\Runner\Version::id()), '---Please upgrade to PHPUnit 6.0 or newer.');
     }
 
     /**
@@ -49,6 +42,7 @@ class SystemRequirementsTest extends PHPUnit_Framework_TestCase
         $files = array(
             '.htaccess',
             '404.php',
+            'LICENSE',
             'ReadMe.md',
             '_build/gulpfile.js',
             '_build/javascript/core.js',

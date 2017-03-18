@@ -6,7 +6,7 @@
  *  testConfigFileStructure         Verifies config file structure to ensure settings are named correctly
  *  testConfigFileContents          Verifies config file contents to ensure setting values are valid
  */
-class ConfigurationTest extends PHPUnit_Framework_TestCase
+class ConfigurationTest extends PHPUnit\Framework\TestCase
 {
     public function testConfigFileStructure()
     {
