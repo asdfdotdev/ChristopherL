@@ -118,8 +118,8 @@ HTML;
         <div class="the-outer-limits">
             <h1>Connect <span class="hidden-phone">with Christopherl</span></h1>
             <aside class="contact">
-                <h3>Phone</h3>
-                <a href="tel:14242424711">42 42 42 4 711</a>
+                <h3>Our Digits</h3>
+                <a href="tel:14242424711">(42)<sup>3</sup> 4 7-11</a>
                 <span>Yes, this number is real. And it's awesome.<br>It's real awesome.</span>
             </aside>
             <p>
@@ -133,16 +133,23 @@ HTML;
                 You can find us on 
                 <a href="https://twitter.com/chrislarrycarl" target="_blank">Twitter</a>, 
                 <a href="https://www.linkedin.com/in/chriscarlevato" target="_blank">LinkedIn</a>, 
-                <a href="https://github.com/chrislarrycarl" target="_blank">GitHub</a>, and 
-                <a href="https://www.flickr.com/photos/chrislarrycarl" target="_blank">Flickr</a>.
+                <a href="https://github.com/chrislarrycarl" target="_blank">GitHub</a>, 
+                <a href="https://www.flickr.com/photos/chrislarrycarl" target="_blank">Flickr</a>,
+                <a href="https://keybase.io/chrislarrycarl" target="_blank">Keybase</a>, and
+                <a href="https://plus.google.com/100207846325253267928" target="_blank">Google+</a>.
             </p>
             
             <h2>Good Old Email</h2>
             <p>
-                But email isn't a secure medium you say?
+                But email isn't a secure medium you say? 
+            </p>
+            <p>
+                And you don't care this is an https slack webhook and not an actual email form?
             </p>
             <p>
                 OK. Calm down Alan Westin, if it makes you feel better here's <a href="download/christopherl_public_key.asc">our public key</a>.
+                <br>
+                <sub><i>(sha 256 checksum: 92ee978f9ba0d032c63e265bf4265ab5e47872e84dc469fabaa0361bbede2325)</i></sub>
             </p>
             <form name="contact_christopherl" id="contact_christopherl" data-parsley-trigger="change" onsubmit="return false;">
                 <fieldset>

@@ -469,6 +469,11 @@ aside.contact {
   }
   a {
     font-size: 2em;
+
+    &:hover {
+      text-decoration: none;
+      border-bottom: solid 1px #0fa0ce;
+    }
   }
   span {
     display: block;
