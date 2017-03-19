@@ -60,7 +60,7 @@
     {/if}
 
     {* No notice if we don't compress, so let them know in the meta *}
-    <meta name="copyleft" content="{date("Y")} ChristopherL">
+    <meta name="copyleft" content="1999 - {date("Y")} ChristopherL">
     <meta name="license" content="GNU GPL v2">
     <meta name="download" content="https://github.com/chrislarrycarl/ChristopherL">
 
@@ -138,7 +138,7 @@
             </div>
 
             <div class="copyright">
-                <span>&copy;</span> {date("Y")} ChristopherL - <a href="https://github.com/chrislarrycarl/ChristopherL" target="_blank" title="Download This Website">Code</a>
+                <span>&copy;</span> 1999 &ndash; {date("Y")} ChristopherL [ <a href="https://github.com/chrislarrycarl/ChristopherL" target="_blank" title="Download This Website">Code</a> ]
             </div>
 
             <img src="{$image_root}/img/footer-head.png"
