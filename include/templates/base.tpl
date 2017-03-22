@@ -137,9 +137,7 @@
                 <div class="addthis_horizontal_follow_toolbox"></div>
             </div>
 
-            <div class="copyright">
-                <span>&copy;</span> 1999 &ndash; {date("Y")} ChristopherL [ <a href="https://github.com/chrislarrycarl/ChristopherL" target="_blank" title="Download This Website">Code</a> ]
-            </div>
+            <div class="copyright"><span>&copy;</span> 1999 &ndash; {date("Y")} ChristopherL [ <a href="https://github.com/chrislarrycarl/ChristopherL" target="_blank" title="Download This Website">Code</a> ]</div>
 
             <img src="{$image_root}/img/footer-head.png"
                 alt="ChristopherLs Head"
