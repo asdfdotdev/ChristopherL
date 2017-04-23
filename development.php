@@ -69,9 +69,10 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
             <ul>
                 <li><a href="https://github.com/chrislarrycarl/ChristopherL" target="_blank">ChristopherL</a> &ndash; The code that runs this very website. You're using it right now!</li>
                 <li><a href="https://github.com/chrislarrycarl/Helios-Calendar" target="_blank">Helios Calendar</a> &ndash; A once grand web calendar, now filled with nostalgia.</li>
-                <li><a href="https://github.com/chrislarrycarl/m2" target="_blank">M2</a> &ndash; Quick and easy basic math flash cards.</li>
+                <li><a href="https://github.com/chrislarrycarl/cl_database" target="_blank">cl_database</a> &ndash; A simple PHP database class.</li>
                 <li><a href="https://github.com/chrislarrycarl/cl_session" target="_blank">cl_session</a> &ndash; A friendly PHP session class.</li>
                 <li><a href="https://github.com/chrislarrycarl/dots" target="_blank">dots</a> - A collection of odds and ends to help make machine setup easier.</li>
+                <li><a href="https://github.com/chrislarrycarl/m2" target="_blank">M2</a> &ndash; Quick and easy basic math flash cards.</li>
             </ul>
         </div>
     </section>
