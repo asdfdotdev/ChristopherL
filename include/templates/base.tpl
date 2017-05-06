@@ -128,7 +128,7 @@
                 <ul>
                     <li><a href="http://creasedcomics.com/videos" target="_blank" data-event="footer">Laugh</a></li>
                     <li><a href="http://christopherl.com/m2/" target="_blank" data-event="footer">Do Math</a></li>
-                    <li><a href="https://amzn.com/w/LN1S1UZP94HA" target="_blank" data-event="footer">Go Shopping</a></li>
+                    <li><a href="https://christophurl.co/officialshirt" target="_blank" data-event="footer">Go Shopping</a></li>
                     <li><a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" data-event="footer">Don't Click This</a></li>
                 </ul>
             </div>
