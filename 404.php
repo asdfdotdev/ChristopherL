@@ -46,7 +46,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
 
     $footer_cta = newsletter_subscribe();
 
-    // Page Content (Use regex to remove newline characters.
+    // Page Content
     $content = <<<HTML
     <section>
         <div class="the-outer-limits">

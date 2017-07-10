@@ -1,6 +1,6 @@
 /**
  * Featherlight – ultra slim jQuery lightbox
- * Version 1.7.1 - http://noelboss.github.io/featherlight/
+ * Version 1.7.6 - http://noelboss.github.io/featherlight/
  *
  * Copyright 2017, Noël Raoul Bossart (http://www.noelboss.com)
  * MIT Licensed.
@@ -71,6 +71,13 @@
   .featherlight .featherlight-inner {
     /* make sure its visible */
     display: block;
+  }
+
+  /* don't show these though */
+  .featherlight script.featherlight-inner,
+  .featherlight link.featherlight-inner,
+  .featherlight style.featherlight-inner {
+    display: none;
   }
 
   .featherlight .featherlight-close-icon {

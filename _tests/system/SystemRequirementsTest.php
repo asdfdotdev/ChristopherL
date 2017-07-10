@@ -40,6 +40,7 @@ class SystemRequirementsTest extends PHPUnit\Framework\TestCase
     public function testCompleteInstall()
     {
         $files = array(
+            '.editorconfig',
             '.htaccess',
             '404.php',
             'LICENSE',
@@ -310,6 +311,10 @@ class SystemRequirementsTest extends PHPUnit\Framework\TestCase
             'include/libs/smarty/sysplugins/smartycompilerexception.php',
             'include/libs/smarty/sysplugins/smartyexception.php',
             'include/templates/base.tpl',
+            'include/templates/includes/footer.tpl',
+            'include/templates/includes/header.tpl',
+            'include/templates/includes/meta.tpl',
+            'include/templates/includes/scripts.tpl',
             'index.php',
             'js/global.min.js',
             'marketing.php',

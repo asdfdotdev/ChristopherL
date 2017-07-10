@@ -26,8 +26,8 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
 
 
     // Create Meta & Page Settings
-    $smarty->assign('page_title', 'Poetic Web Development, Since 1999 :: ChristopherL');
-    $smarty->assign('page_desc', 'Codetry® lives at the intersection of art and technology. At ChristopherL we call that intersection home, and have done so for nearly two decades.');
+    $smarty->assign('page_title', 'Your Friendly Neighborhood Web Developer, Since 1999 :: ChristopherL');
+    $smarty->assign('page_desc', 'It doesn\'t take a HubSpot Inbound Certification to know how to build a good website. But it helps. And ChristopherL has both.');
     $smarty->assign('page_url', '/development');
     $smarty->assign('active_nav', 'development');
     $smarty->assign('hero_image', complete_url('/img/heros/development.jpg', 1));
@@ -57,13 +57,13 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
                 width="300">
             <p>
                 Long ago a, now ubiquitous, <a href="https://wordpress.org/" target="_blank">blogging software</a> project popularized the phrase
-                <i>code is poetry</i>. And we at ChristopherL believe that it should be. Creating software is not dissimilar to creating art. The software development process
-                is a journey and the poetry of source code tells the story of that journey, and the people who share it.
+                <i>code is poetry</i>. We at ChristopherL believe that it should be. Creating software is not dissimilar to creating art. The software development process
+                is a journey, the poetry of source code tells the story of that journey and the people who share it.
             </p>
-            <h2>Open Source</h2>
+            <h2>Open Source Software</h2>
             <p>
-                At ChristopherL we want to share our journey with as many people as possible, in our own small way, which is why we've release
-                these projects as open source.
+                At ChristopherL we want to share our journey with as many people as possible, in our own small way, which is why we release
+                all our projects as open source.
             </p>
             <p>All of the following are available for you to enjoy for free, <a href="https://en.wikipedia.org/wiki/Gratis_versus_libre" target="_blank">as in beer and speech</a>.</p>
             <ul>
@@ -72,7 +72,6 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
                 <li><a href="https://github.com/chrislarrycarl/cl_database" target="_blank">cl_database</a> &ndash; A simple PHP database class.</li>
                 <li><a href="https://github.com/chrislarrycarl/cl_session" target="_blank">cl_session</a> &ndash; A friendly PHP session class.</li>
                 <li><a href="https://github.com/chrislarrycarl/dots" target="_blank">dots</a> - A collection of odds and ends to help make machine setup easier.</li>
-                <li><a href="https://github.com/chrislarrycarl/m2" target="_blank">M2</a> &ndash; Quick and easy basic math flash cards.</li>
             </ul>
         </div>
     </section>

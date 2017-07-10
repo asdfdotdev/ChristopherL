@@ -276,6 +276,7 @@ body {
 }
 
 a {
+    color: $blue;
     text-decoration: none;
 
     &:hover {
@@ -305,7 +306,9 @@ header {
         height: 75px;
     }
 
-    img {
+    svg {
+        width: 200px;
+        height: 75px;
         display: block;
         margin: 0 auto 0 auto;
 
@@ -477,8 +480,19 @@ section {
     h1 {
         font-size: 4rem;
     }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
     ul {
         margin-left: 3%;
+    }
+
+    p {
+        & + ul {
+            margin-top: -1.5rem;
+        }
     }
 
     &.highlight,
@@ -667,6 +681,14 @@ footer .head {
 
         @include tablet {
             width: 20%;
+        }
+    }
+
+    a {
+        color: $white;
+
+        &.github {
+            color: $blue;
         }
     }
 }

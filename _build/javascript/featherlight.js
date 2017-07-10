@@ -1,6 +1,6 @@
 /**
  * Featherlight - ultra slim jQuery lightbox
- * Version 1.7.1 - http://noelboss.github.io/featherlight/
+ * Version 1.7.6 - http://noelboss.github.io/featherlight/
  *
  * Copyright 2017, Noël Raoul Bossart (http://www.noelboss.com)
  * MIT Licensed.
@@ -481,19 +481,22 @@
                 tempConfig = $.extend({}, Klass.defaults, Klass.readElementConfig($source[0], namespace), config),
                 sharedPersist;
             var handler = function(event) {
+                var $target = $(event.currentTarget);
                 /* ... since we might as well compute the config on the actual target */
                 var elemConfig = $.extend(
-                    {$source: $source, $currentTarget: $(this)},
+                    {$source: $source, $currentTarget: $target},
                     Klass.readElementConfig($source[0], tempConfig.namespace),
-                    Klass.readElementConfig(this, tempConfig.namespace),
+                    Klass.readElementConfig(event.currentTarget, tempConfig.namespace),
                     config);
-                var fl = sharedPersist || $(this).data('featherlight-persisted') || new Klass($content, elemConfig);
+                var fl = sharedPersist || $target.data('featherlight-persisted') || new Klass($content, elemConfig);
                 if(fl.persist === 'shared') {
                     sharedPersist = fl;
                 } else if(fl.persist !== false) {
-                    $(this).data('featherlight-persisted', fl);
+                    $target.data('featherlight-persisted', fl);
                 }
-                elemConfig.$currentTarget.blur(); // Otherwise 'enter' key might trigger the dialog again
+                if (elemConfig.$currentTarget.blur) {
+                    elemConfig.$currentTarget.blur(); // Otherwise 'enter' key might trigger the dialog again
+                }
                 fl.open(event);
             };
 
@@ -573,7 +576,9 @@
 
                 this._$previouslyWithTabIndex.add(this._$previouslyTabbable).attr('tabindex', -1);
 
-                document.activeElement.blur();
+                if (document.activeElement.blur) {
+                    document.activeElement.blur();
+                }
                 return _super(event);
             },
 

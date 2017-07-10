@@ -46,7 +46,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     $footer_cta = newsletter_subscribe();
     $image_root = complete_url('', 1);
 
-    // Page Content (Use regex to remove newline characters.
+    // Page Content
     $content = <<<HTML
     <section class="image-right">
         <div class="the-outer-limits">
@@ -56,22 +56,21 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
                 title="A Trip Down Memory Lane"
                 width="300">
             <p>
-                Data obsessed, customer driven, and metric focused. Modern marketing truly lives at the corner of technology and 
-                liberal arts. Gone are the days of marketing being a tool for simply talking to (or at) clients. At ChristopherL 
-                we believe good marketing is about storytelling, and clients are the foundation of any good brand story.
+                Today's marketer is data obsessed, metric driven, and customer focused. Gone are the days of marketing simply being a means for talking at your clients. ChristopherL 
+                believes good marketing is about compelling storytelling, and we know the why is a foundation for any good brand story.
             </p>
             
             <h2>Christopherl <span class="hidden-phone">For Your</span> Url</h2>
             <p>
-                This isn't to say that it's all cool toys, magic quadrants, and analytics. Branding still plays a vital role in the age
+                This isn't to say that it's all cool apps, magic quadrants, and deep dive analytics. Branding still plays a vital role in the age
                 of digital marketing. Even something as rudimentary as a short url can serve as an opportunity for 
                 <del>self promotion</del> improving brand awareness.
             </p>
             <p>
-                Case in point, just try to resist clicking this cleverly branded link...
+                Case in point, just try to resist <span class="action-desktop">clicking</span><span class="action-mobile">tapping</span> this cleverly branded link...
             </p>
             <p>
-                <a href="http://christophurl.co/1VijVZs">http://christophurl.co/1VijVZs</a>
+                <a href="http://christophurl.co/marketing_secrets">http://christophurl.co/marketing_secrets</a>
             </p>
         </div>
     </section>

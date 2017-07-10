@@ -27,7 +27,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
 
     // Create Meta & Page Settings
     $smarty->assign('page_title', 'Serious Business, Since 1999 :: ChristopherL');
-    $smarty->assign('page_desc', 'More than a homepage, ChristopherL has been serious about web development and marketing since 1999. Join us for a look at the brand behind the man.');
+    $smarty->assign('page_desc', 'More than a homepage, ChristopherL has been serious about web development and digital marketing since 1999. Join us for a look at the brand behind the geek.');
     $smarty->assign('page_url', '/');
     $smarty->assign('active_nav', 'home');
     $smarty->assign('hero_image', complete_url('/img/heros/homepage.jpg', 1));
@@ -46,14 +46,15 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     $footer_cta = newsletter_subscribe();
     $image_root = complete_url('', 1);
 
-    // Page Content (Use regex to remove newline characters.
+    // Page Content
     $content = <<<HTML
     <section class="image-right">
         <div class="the-outer-limits">
-            <h1>Greetings &amp; Salutations</h1>
+            <h1>Greetings &amp; Salutations <span class="hidden-phone">Web Friends</span></h1>
             <p>
                 It's a big internet out there, thank you for visiting this little corner of it. Since you're here you may find yourself asking,
-                <i>"What is ChristopherL?"</i> An idea? A dream? A vision?...The truth is, it's all these things, and much more.
+                <i>"What is ChristopherL?"</i> An idea? A dream? A vision? A tongue in cheek website of a fake brand for a Portland, OR based
+                web developer? &hellip; The truth is, it's all these things, and much more.
             </p>
             <p>
                 We're stoked for an opportunity to help you get to know ChristopherL better. So pull up a chair, get comfortable, 
@@ -67,7 +68,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     <section class="highlight button-links">
         <div class="the-outer-limits container row">
             <div class="six columns">
-                <h3>Development</h3>
+                <h3><span class="hidden-phone">Web</span> Development</h3>
                 <p>
                     We call it <i>Codetry</i>&reg;, and it's about more than just good software.
                 </p>
@@ -75,9 +76,9 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
                 <a href="development"><span class="action-desktop">Click</span><span class="action-mobile">Tap</span> to View Source</a>
             </div>
             <div class="six columns">
-                <h3>Marketing</h3>
+                <h3><span class="hidden-phone">Digital</span> Marketing</h3>
                 <p>
-                    Data insight and automation isn't just for nerds anymore. 
+                    Data insights and automation isn't just for nerds anymore. 
                 </p>
                 
                 <a href="marketing"><span class="action-desktop">Click</span><span class="action-mobile">Tap</span> to Get Inbound</a>

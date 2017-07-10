@@ -119,7 +119,7 @@ HTML;
             <h1>Connect <span class="hidden-phone">with Christopherl</span></h1>
             <aside class="contact">
                 <h3>Our Digits</h3>
-                <a href="tel:14242424711">(42)<sup>3</sup> 4 7-11</a>
+                <a href="tel:14242424711">(424) 242-4711</a>
                 <span>Yes, this number is real. And it's awesome.<br>It's real awesome.</span>
             </aside>
             <p>
@@ -164,7 +164,7 @@ HTML;
                     
                     {$captcha_challenge}
                     
-                    <input id="submit" type="submit" name="submit" value="Go Button">
+                    <input id="submit" type="submit" name="submit" value="Go Button" title="Smash the Go Button to Send">
                 </fieldset>
             </form>
             <div id="feedback" class="hidden">This is a feedback message</div>

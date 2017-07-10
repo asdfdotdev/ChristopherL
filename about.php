@@ -127,7 +127,7 @@ HTML;
             <p>
                 Like <a href="https://en.wikipedia.org/wiki/Pets.com" target="_blank">so many</a> 
                 <a href="https://en.wikipedia.org/wiki/Yahoo!_GeoCities" target="_blank">digital ventures</a>
-                <a href="https://en.wikipedia.org/wiki/Webvan" target="_blank">of that era</a> it was ambitious, a bit ahead of it's time,
+                <a href="https://en.wikipedia.org/wiki/Webvan" target="_blank">of that era</a> it was visionary, ambitious, ahead of it's time,
                 and made no money. A key distinction to fellow bubble era darlings, however, is that ChristopherL was a student homepage.
             </p>
             <p>
