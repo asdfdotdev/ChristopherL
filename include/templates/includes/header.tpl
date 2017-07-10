@@ -1,9 +1,6 @@
 <header>
     <div class="the-outer-limits container row">
         <a href="{$site_domain}" data-event="logo">
-            <?xml version="1.0" standalone="no"?>
-            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
-            "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                  width="2900.000000pt" height="1000.000000pt" viewBox="0 0 2900.000000 1000.000000"
                  preserveAspectRatio="xMidYMid meet">
