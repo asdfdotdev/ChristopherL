@@ -8,6 +8,7 @@
 
 
 <IfModule mod_headers.c>
+    Header set Referrer-Policy no-referrer-when-downgrade
     Header set X-Frame-Options DENY
     Header always set X-XSS-Protection "1; mode=block"
     Header always set X-Content-Type-Options "nosniff"
@@ -41,5 +42,5 @@
 
 # Cache it
 <filesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
-	Header set Cache-Control "max-age=604800, public"
+    Header set Cache-Control "max-age=604800, public"
 </filesMatch>
