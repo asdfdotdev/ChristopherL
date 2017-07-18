@@ -628,15 +628,11 @@ footer {
 
 footer h4,
 .addthis_horizontal_follow_toolbox p {
+    font-family: $header_font;
+    font-size: 3.0rem;
     margin: 0 0 5% 0;
     padding: 0;
     line-height: 1.35;
-}
-
-.addthis_horizontal_follow_toolbox {
-    font-family: $header_font;
-    font-size: 3.0rem;
-    margin-bottom: 7%;
 }
 
 footer .head {
@@ -658,7 +654,7 @@ footer .head {
         font-size: 1em;
     }
 
-    span {
+    span:first-child {
         -moz-transform: scaleX(-1);
         -o-transform: scaleX(-1);
         -webkit-transform: scaleX(-1);

@@ -33,7 +33,7 @@
             <div class="addthis_horizontal_follow_toolbox"></div>
         </div>
 
-        <div class="copyright"><span>&copy;</span> 1999 &ndash; {date("Y")} <a href="{$site_root}/" title="Chris Carlevato">ChristopherL</a> [ <a href="https://github.com/chrislarrycarl/ChristopherL" target="_blank" title="Download This Website" class="github">Code</a> ]</div>
+        <div class="copyright"><span>&copy;</span> <span class="hidden-phone">1999 &ndash;</span> {date("Y")} <a href="{$site_root}/" title="Chris Carlevato">ChristopherL</a> [ <a href="https://github.com/chrislarrycarl/ChristopherL" target="_blank" title="Download This Website" class="github">Code</a> ]</div>
 
         <img src="{$image_root}/img/footer-head.png"
              alt="ChristopherLs Head"
