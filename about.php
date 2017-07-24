@@ -120,7 +120,7 @@ HTML;
     $content = <<<HTML
     <section>
         <div class="the-outer-limits">
-            <h1><span class="hidden-phone">From</span> Humble Beginings</h1>
+            <h1><span class="hidden-phone">From</span> Humble Beginnings</h1>
             <p>
                 ChristopherL was born in 1999.
             </p>
