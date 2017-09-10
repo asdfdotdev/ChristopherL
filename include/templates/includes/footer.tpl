@@ -1,5 +1,5 @@
 <footer>
-    <div class="the-outer-limits container row">
+    <div class="the-outer-limits row">
 
         <div class="three columns">
             <h4>Look Around</h4>
@@ -13,10 +13,10 @@
         <div class="three columns">
             <h4>Make Friends</h4>
             <ul>
-                <li><a href="https://somafm.com/" target="_blank" data-event="footer">Soma FM</a></li>
+                <li><a href="https://somafm.com" target="_blank" data-event="footer">Soma FM</a></li>
                 <li><a href="https://timbersarmy.org/107ist/what-why" target="_blank" data-event="footer">107ist</a></li>
-                <li><a href="http://www.flickerbox.com" target="_blank" data-event="footer">Flickerbox</a></li>
-                <li><a href="https://www.tsheets.com" target="_blank" data-event="footer">TSheets</a></li>
+                <li><a href="https://www.mozilla.org" target="_blank" data-event="footer">Mozilla</a></li>
+                <li><a href="https://www.canonical.com/" target="_blank" data-event="footer">Canonical</a></li>
             </ul>
         </div>
         <div class="three columns">
@@ -25,7 +25,7 @@
                 <li><a href="http://creasedcomics.com/videos" target="_blank" data-event="footer">Laugh</a></li>
                 <li><a href="http://christopherl.com/m2/" target="_blank" data-event="footer">Do Math</a></li>
                 <li><a href="https://christophurl.co/officialshirt" target="_blank" data-event="footer">Go Shopping</a></li>
-                <li><a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" data-event="footer">Don't Click This</a></li>
+                <li><a href="https://howtohardrefresh.com/" target="_blank" data-event="footer">Hard Refresh</a></li>
             </ul>
         </div>
         <div class="three columns">

@@ -1,0 +1,20 @@
+header {
+    background: $white;
+    padding: 1% 0 0 0;
+
+    @include desktop {
+        padding: 1% 0 1% 0;
+        height: 75px;
+    }
+
+    svg {
+        width: 200px;
+        height: 75px;
+        display: block;
+        margin: 0 auto 0 auto;
+
+        @include desktop {
+            float: left;
+        }
+    }
+}

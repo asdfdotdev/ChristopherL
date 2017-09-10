@@ -1,0 +1,58 @@
+.parsley-errors-list {
+    margin: 0;
+
+    li {
+        list-style-type: none;
+        font-style: italic;
+        color: $red;
+    }
+}
+
+.parsley-error,
+.error {
+    border: solid 1px $red !important;
+}
+
+#feedback {
+    border-left: solid 2px $green;
+    padding: 1%;
+    margin: -2% 0 1% 0;
+    background: $green-light;
+    color: $black-almost;
+
+    &.incomplete {
+        border-left: solid 2px $red;
+        padding: 1%;
+        margin: -2% 0 1% 0;
+        background: $pink;
+        color: $black-almost;
+    }
+}
+
+fieldset {
+    textarea {
+        width: 100%;
+        height: 200px;
+
+        @include tablet {
+            width: 50%;
+        }
+
+    }
+    #g-recaptcha {
+        width: 302px;
+    }
+    #submit {
+        clear: both;
+        display: block;
+        margin-top: 2% !important;
+        background-color: $gray-darker !important;
+        transition: all 0.23s;
+        color: $white;
+
+        &:hover {
+            background-color: $blue !important;
+            color: $white !important;
+        }
+    }
+}

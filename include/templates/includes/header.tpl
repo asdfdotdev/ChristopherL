@@ -1,5 +1,5 @@
 <header>
-    <div class="the-outer-limits container row">
+    <div class="the-outer-limits row">
         <a href="{$site_domain}" data-event="logo">
             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                  width="2900.000000pt" height="1000.000000pt" viewBox="0 0 2900.000000 1000.000000"

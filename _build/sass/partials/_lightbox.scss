@@ -1,0 +1,38 @@
+.featherlight {
+    &-close-icon {
+        border: 0;
+        background: none;
+        width: 15px;
+        font-size: 20px;
+        line-height: 0px;
+        margin-top: 0;
+        margin: 0;
+        background: none !important;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    &-iframe,
+    &-content {
+        overflow-y: hidden;
+    }
+}
+
+.fl {
+    display: none;
+    max-width: 100%;
+
+    img,
+    span {
+        display: block;
+        clear: both;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+.lightbox {
+    cursor: pointer;
+}

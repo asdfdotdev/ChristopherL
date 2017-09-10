@@ -1,0 +1,102 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: $primary_font;
+    background: $gray;
+    border-top: solid 3px $black-almost;
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        color: $blue !important;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: $header_font;
+}
+
+h1 {
+    font-size: 1em;
+}
+
+.hidden {
+    display: none;
+
+    &-phone {
+        display: none;
+
+        @include tablet {
+            display: inline-block;
+        }
+    }
+
+    &-tablet {
+        @include tablet {
+            display: none !important;
+        }
+    }
+
+    &-desktop {
+        @include desktop {
+            display: none !important;
+        }
+    }
+}
+
+.the-outer-limits {
+    width: 90%;
+    max-width: $maximum_content_width;
+    display: block;
+    margin: auto;
+}
+
+.wide-stance {
+    display: block;
+    position: relative;
+    margin: auto;
+    float: none;
+    max-width: 100%;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.action {
+    &-mobile {
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &-desktop {
+        display: none;
+
+        @include desktop {
+            display: inline-block;
+        }
+    }
+}

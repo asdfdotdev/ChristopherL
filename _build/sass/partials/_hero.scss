@@ -1,0 +1,26 @@
+.hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    width: 100%;
+    min-height: 150px;
+    clear: both;
+
+    @include tablet {
+        min-height: 250px;
+    }
+
+    @include desktop {
+        min-height: 350px;
+    }
+}
+
+.hero_contact {
+    @extend .hero;
+    background-position: right center;
+
+    @include desktop {
+        background-position: center center;
+    }
+}

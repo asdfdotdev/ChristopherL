@@ -1,0 +1,36 @@
+section {
+    display: block;
+    clear: both;
+    padding-top: 2%;
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    ul {
+        margin-left: 3%;
+    }
+
+    p {
+        & + ul {
+            margin-top: -1.5rem;
+        }
+    }
+
+    &.highlight,
+    #map {
+        background: $gray-darker;
+        padding: 1% 0;
+        border-top: solid 1px $black-almost;
+        border-bottom: solid 1px $black-almost;
+
+        h3,
+        p {
+            text-align: center;
+        }
+    }
+}

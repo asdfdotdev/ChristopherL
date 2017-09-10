@@ -1,0 +1,122 @@
+nav {
+    width: 100%;
+    display: block;
+    clear: both;
+    height: auto;
+    margin: 0;
+    padding: 0;
+
+    @include desktop {
+        float: right;
+        margin: 2% 2% 0 0;
+        width: 60%;
+        text-align: right;
+        clear: none;
+        display: inline;
+    }
+
+    .active {
+        a {
+            color: $blue;
+        }
+
+        @include desktop {
+            border-bottom: solid 1px $blue;
+        }
+    }
+
+    a {
+        font-size: 2em;
+        color: $black-almost;
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        @include desktop {
+            font-size: 1.4em;
+        }
+        span {
+            display: none;
+
+            @include desktop {
+                display: inline;
+                min-width: 100px;
+            }
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    ul {
+        display: inline-block;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        @include desktop {
+            right: 0;
+        }
+
+        li {
+            display: inline;
+            list-style-type: none;
+            float: left;
+            width: 20%;
+            margin: 0;
+            padding: 0;
+
+            @include desktop {
+                width: auto;
+                margin: 0 2% 0 2%;
+
+                &:first-child {
+                    margin: 0 2% 0 0;
+                }
+
+                &:last-child {
+                    margin: 0 0 0 2%;
+                }
+            }
+
+            a {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        li {
+            &:first-child a:before {
+                content: $home_icon;
+            }
+
+            &:nth-child(2) a:before {
+                content: $development_icon;
+            }
+
+            &:nth-child(3) a:before {
+                content: $marketing_icon;
+            }
+
+            &:nth-child(4) a:before {
+                content: $about_icon;
+            }
+
+            &:nth-child(5) a:before {
+                content: $contact_icon;
+            }
+
+            & a:before {
+                font-family: $icon_font;
+
+                @include desktop {
+                    content: '' !important;
+                }
+            }
+        }
+    }
+}

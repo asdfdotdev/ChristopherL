@@ -16,15 +16,7 @@ var fs = require('fs-extra'),
 
 
 gulp.task('scripts', function() {
-    return gulp.src('./javascript/**/*.js')
-        .pipe(order([
-            // third party libraries
-            "jQuery.js",
-            "featherlight.js",
-            "parsley.js",
-            // our custom js
-            "core.js"
-        ]))
+    return gulp.src('./javascript/**/**/*.js')
         .pipe(concat('global.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('../js/'));
@@ -34,17 +26,6 @@ gulp.task('scripts', function() {
 gulp.task('styles', function () {
     gulp.src('./sass/**/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(order([
-            // third party libraries
-            "media.scss",
-            "normalize.scss",
-            "skeleton.scss",
-            "featherlight.scss",
-            // third party class overrides
-            "mailchimp.scss",
-            // our custom styles
-            "christopherl.scss"
-        ]))
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],

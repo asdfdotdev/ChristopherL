@@ -1,0 +1,16 @@
+.addthis-mobile-shim {
+    display: block;
+    width: 100%;
+    height: 45px;
+
+    @include desktop {
+        display: none;
+        height: 0;
+    }
+}
+
+.twitter-timeline {
+    height: 350px !important;
+    display: block !important;
+    margin: 0 auto 2% auto !important;
+}
