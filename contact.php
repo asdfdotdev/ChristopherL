@@ -135,8 +135,9 @@ HTML;
                 <a href="https://www.linkedin.com/in/chriscarlevato" target="_blank">LinkedIn</a>, 
                 <a href="https://github.com/chrislarrycarl" target="_blank">GitHub</a>, 
                 <a href="https://www.flickr.com/photos/chrislarrycarl" target="_blank">Flickr</a>,
-                <a href="https://keybase.io/chrislarrycarl" target="_blank">Keybase</a>, and
-                <a href="https://plus.google.com/100207846325253267928" target="_blank">Google+</a>.
+                <a href="https://keybase.io/chrislarrycarl" target="_blank">Keybase</a>,
+                <a href="https://plus.google.com/100207846325253267928" target="_blank">Google+</a>, and
+                <a href="https://setiathome.berkeley.edu/show_user.php?userid=166402" target="_blank">Seti@Home</a>.
             </p>
             
             <h2>Good Old Email</h2>
