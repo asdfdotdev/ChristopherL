@@ -68,7 +68,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
             <p>All of the following are available for you to enjoy for free, <a href="https://en.wikipedia.org/wiki/Gratis_versus_libre" target="_blank">as in beer and speech</a>.</p>
             <ul>
                 <li><a href="https://github.com/christopherldotcom/ChristopherL" target="_blank">ChristopherL</a> &ndash; The code that runs this very website. You're using it right now!</li>
-                <li><a href="https://github.com/christopherldotcom/utm-dot-codes" target="_blank">utm.codes</a> &ndash; A helpful WordPress plugin.</li>
+                <li><a href="https://github.com/christopherldotcom/utm.codes" target="_blank">utm.codes</a> &ndash; A helpful WordPress plugin.</li>
                 <li><a href="https://github.com/christopherldotcom/cl_database" target="_blank">cl_database</a> &ndash; A simple PHP database class.</li>
                 <li><a href="https://github.com/christopherldotcom/cl_session" target="_blank">cl_session</a> &ndash; A friendly PHP session class.</li>
                 <li><a href="https://github.com/christopherldotcom/Helios-Calendar" target="_blank">Helios Calendar</a> &ndash; A once grand web calendar, now filled with nostalgia.</li>
