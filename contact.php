@@ -42,7 +42,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     $captcha_challenge = $captcha_scripts = '';
 
     if ($config['recaptcha_active'] && $config['recaptcha_site_key'] && $config['recaptcha_secret_key']) {
-        $captcha_challenge = '<div id="g-recaptcha" class="g-recaptcha" data-sitekey="'.$config['recaptcha_site_key'].'"></div>';
+        $captcha_challenge = '<div id="g-recaptcha" class="g-recaptcha" data-sitekey="' . $config['recaptcha_site_key'] . '"></div>';
         $captcha_scripts = '<script src="https://www.google.com/recaptcha/api.js"></script>';
     }
 

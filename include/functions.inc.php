@@ -11,7 +11,8 @@
 /**
  * Configure Smarty settings in use globally on all pages, including directory paths, and global $config
  */
-function smarty_scaffolding() {
+function smarty_scaffolding()
+{
     global $smarty, $config;
 
     if (!$smarty || !$config) {
@@ -50,8 +51,7 @@ function smarty_scaffolding() {
 
     if ($config['schema']['type'] == 0) {
         $config['schema']['type'] = 'Organization';
-    }
-    else {
+    } else {
         $config['schema']['type'] = 'Person';
     }
 
@@ -62,18 +62,18 @@ function smarty_scaffolding() {
 /**
  * Prepare content for use in page by removing comments, compressing whitespace, and removing line breaks.
  *
- * @param string $content  page content being processed
+ * @param string $content page content being processed
  *
  * @return boolean|string  page content compressed, or not, based on $config setting, false if config or content is null
  */
-function smarty_content($content) {
+function smarty_content($content)
+{
     global $config;
 
     // if we don't have $config settings, or $content is empty, return false
     if (!$config || !$content) {
         return false;
-    }
-    // if global config setting to compress is off don't do anything
+    } // if global config setting to compress is off don't do anything
     else if (!$config['compress']) {
         return $content;
     }
@@ -85,7 +85,7 @@ function smarty_content($content) {
     $content = preg_replace('/\s+/', ' ', $content);
 
     // remove line breaks (where the real smooshing happens)
-    $content = preg_replace("/[\n\r]/","", trim($content));
+    $content = preg_replace("/[\n\r]/", "", trim($content));
 
     return $content;
 }
@@ -94,7 +94,8 @@ function smarty_content($content) {
 /**
  * If $config['compress'] is active, output compression notice HTML comment and activate Smarty plugin to trim whitespace.
  */
-function smarty_smoosh() {
+function smarty_smoosh()
+{
     global $smarty, $config;
 
     if ($config['compress']) {
@@ -116,14 +117,15 @@ function smarty_smoosh() {
  * Prepare form submission for use by converting multidimensional array to associative array containing:
  * $key = input name, $value = submitted value
  *
- * @param array $data   array of serialized form data
+ * @param array $data array of serialized form data
  *
  * @return array|bool   return prepared array, false if form submission is blank
  */
-function package_form_submission($data=array()) {
+function package_form_submission($data = array())
+{
 
     // if submission isn't an array, or is an empty array abort
-    if ( !is_array($data) || count($data) == 0 ) {
+    if (!is_array($data) || count($data) == 0) {
         return false;
     }
 
@@ -131,15 +133,14 @@ function package_form_submission($data=array()) {
     foreach ($data as $form_input) {
 
         // process array data
-        if ( is_array($form_input['value']) ) {
+        if (is_array($form_input['value'])) {
             // trim excess spaces and convert smart quotes
             $value = array_map('trim', $form_input['value']);
             $value = array_map('convert_smart_quotes', $value);
 
             // filter array values
             $value = filter_var_array($value, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
-        }
-        // process single value data
+        } // process single value data
         else {
             // trim excess spaces and convert smart quotes
             $value = trim($form_input['value']);
@@ -166,11 +167,12 @@ function package_form_submission($data=array()) {
 /**
  * Set AJAX response values with error details.
  *
- * @param string $message   feedback message to display in page
- * @param string $field     id of input to highlight with error css class
+ * @param string $message feedback message to display in page
+ * @param string $field id of input to highlight with error css class
  * @param $response         reference to ajax.php $response array
  */
-function set_response_error($message='', $field='', &$response) {
+function set_response_error($message = '', $field = '', &$response)
+{
     $response['status'] = '500';
     $response['success'] = false;
     $response['error'] = true;
@@ -182,10 +184,11 @@ function set_response_error($message='', $field='', &$response) {
 /**
  * Set AJAX response values with feedback details.
  *
- * @param string $message   feedback message to display in page
+ * @param string $message feedback message to display in page
  * @param $response         reference to ajax.php $response array
  */
-function set_response_feedback($message='', &$response) {
+function set_response_feedback($message = '', &$response)
+{
     $response['status'] = '200';
     $response['success'] = true;
     $response['error'] = false;
@@ -198,7 +201,8 @@ function set_response_feedback($message='', &$response) {
  *
  * @return string           markup required for newsletter subscription
  */
-function newsletter_subscribe() {
+function newsletter_subscribe()
+{
     return <<<HTML
     <section class="center">
         <div class="the-outer-limits">
@@ -231,7 +235,8 @@ HTML;
  *
  * @return string           Complete URL to resource
  */
-function complete_url($path, $domain) {
+function complete_url($path, $domain)
+{
     global $config;
 
     if ($domain == 0 || $config['cdn_domain'] == '') {
@@ -251,7 +256,8 @@ function complete_url($path, $domain) {
  *
  * @return mixed            Content with quotes replace.
  */
-function convert_smart_quotes($string) {
+function convert_smart_quotes($string)
+{
     $dirty_quotes = array(chr(145), chr(146), chr(147), chr(148), chr(151), "“", "”", "‘", "’");
     $clean_quotes = array("'", "'", '"', '"', '-', '"', '"', "'", "'");
 

@@ -14,7 +14,8 @@
  * @param array $form       submitted form data ($key = form input id, $value = submitted value)
  * @param $response         reference to ajax.php $response array
  */
-function send_contact_message($form=array(), &$response) {
+function send_contact_message($form = array(), &$response)
+{
     global $config;
 
     if (!$config['send_to_address']) {
@@ -23,18 +24,18 @@ function send_contact_message($form=array(), &$response) {
     }
 
     // if captcha value is missing end with updated error message
-    if ($config['recaptcha_active'] && !$form['g-recaptcha-response']){
+    if ($config['recaptcha_active'] && !$form['g-recaptcha-response']) {
         set_response_error('CAPTCHA Response Missing', 'g-recaptcha', $response);
     }
     // begin processing submission
     else {
         // if captcha is enabled validate response
         if ($config['recaptcha_active']) {
-            $captcha_validation_result = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$config['recaptcha_secret_key']."&response=".$form['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']);
-            $responseKeys = json_decode($captcha_validation_result,true);
+            $captcha_validation_result = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $config['recaptcha_secret_key'] . "&response=" . $form['g-recaptcha-response'] . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
+            $responseKeys = json_decode($captcha_validation_result, true);
 
             // captcha validation failed, end with updated error message
-            if(intval($responseKeys["success"]) !== 1) {
+            if (intval($responseKeys["success"]) !== 1) {
                 set_response_error('CAPTCHA Response Failed', 'g-recaptcha', $response);
                 return;
             }
@@ -62,15 +63,15 @@ function send_contact_message($form=array(), &$response) {
             }
             else {
                 $data = "payload=" . json_encode(array(
-                        "channel"       =>  "{$config['slack_channel']}",
-                        "text"          =>  sprintf("%s Contact Message:\n*Name:* %s\n*Email:* %s\n> %s",
-                                                $config['site_domain'],
-                                                $form['fullname'],
-                                                $form['email'],
-                                                $form['message']
-                                            ),
-                        "icon_emoji"    =>  $config['slack_icon']
-                ));
+                        "channel" => "{$config['slack_channel']}",
+                        "text" => sprintf("%s Contact Message:\n*Name:* %s\n*Email:* %s\n> %s",
+                            $config['site_domain'],
+                            $form['fullname'],
+                            $form['email'],
+                            $form['message']
+                        ),
+                        "icon_emoji" => $config['slack_icon']
+                    ));
 
                 $ch = curl_init($config['slack_url']);
                 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");

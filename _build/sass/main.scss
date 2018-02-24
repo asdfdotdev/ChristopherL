@@ -5,16 +5,13 @@
  * @copyright 2016-2018 ChristopherL (https://github.com/christopherldotcom)
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
-
 @import "_/settings";
 @import "_/mixins";
 @import "_/typography";
-
 @import "vendor/normalize";
 @import "vendor/skeleton";
 @import "vendor/featherlight";
 @import "vendor/mailchimp";
-
 @import "partials/layout";
 @import "partials/header";
 @import "partials/nav";

@@ -12,11 +12,11 @@ require_once('include/functions.inc.php');
 
 // initialize response values to defaults
 $response = array(
-    'status'    => '404',
-    'success'   => false,
-    'error'     => true,
-    'field'     => null,
-    'msg'       => 'An Unknown Error Occurred');
+    'status' => '404',
+    'success' => false,
+    'error' => true,
+    'field' => null,
+    'msg' => 'An Unknown Error Occurred');
 
 if (!empty($_POST)) {
 

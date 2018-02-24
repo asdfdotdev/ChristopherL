@@ -7,11 +7,11 @@
  */
 
 // because we like to know what you're doing...
-;(function($){
-    $(function(){
+;(function ($) {
+    $(function () {
 
         // global listener to track link clicks
-        $('a').on('click',function(event){
+        $('a').on('click', function (event) {
             var clicked = $(this),
                 link = clicked.attr('href');
 
@@ -19,30 +19,30 @@
             if (clicked.attr('target') !== '_blank' &&
                 typeof link != 'undefined' &&
                 link.indexOf('javascript:') !== 0 &&
-                link.indexOf('#') !== 0)
-            {
+                link.indexOf('#') !== 0) {
                 event.preventDefault();
 
                 // when tracking complete event fires, send them on their way
-                $(document).one('ga_track_complete', function(){
+                $(document).one('ga_track_complete', function () {
                     window.location.href = link;
                 });
             }
 
             // fire tracker with link details
             $(document).trigger('ga_track', [{
-                type:"link_click",
-                identifier:{
-                    dom_data:clicked.attr('data-event'),
-                    dom_id:clicked.attr('id')
-                },
-                target:link}]
+                    type: "link_click",
+                    identifier: {
+                        dom_data: clicked.attr('data-event'),
+                        dom_id: clicked.attr('id')
+                    },
+                    target: link
+                }]
             );
         });
 
         // track newsletter signup, send event to both Optimizely and GA
         window['optimizely'] = window['optimizely'] || [];
-        $('#mc-embedded-subscribe-form').one('submit', function(event){
+        $('#mc-embedded-subscribe-form').one('submit', function (event) {
             event.preventDefault();
             try {
                 window.optimizely.push(["trackEvent", "newsletterSignUp"]);
@@ -55,31 +55,33 @@
                     identifier: 'Newsletter Sign-Up Test: ' + op_variation_name
                 }])
             }
-            catch (err) {}
+            catch (err) {
+            }
             finally {
                 $(this).submit();
             }
         });
 
         // misc listner to track non link clicks (images, easter egg spans)
-        $('img, span.egg, .play-button').on('click', function(event){
-            if(! $(this).parent().is('a')){
+        $('img, span.egg, .play-button').on('click', function (event) {
+            if (!$(this).parent().is('a')) {
                 var clicked = $(this);
 
                 // fire tracker with element details
                 $(document).trigger('ga_track', [{
-                    type:"other_click",
-                    identifier:{
-                        dom_data:clicked.attr('data-event'),
-                        dom_id:clicked.attr('id')
-                    },
-                    target:clicked.attr('src')}]
+                        type: "other_click",
+                        identifier: {
+                            dom_data: clicked.attr('data-event'),
+                            dom_id: clicked.attr('id')
+                        },
+                        target: clicked.attr('src')
+                    }]
                 );
             }
         });
 
         // tracker listener - this is where the magic happens
-        $(document).on('ga_track', function ga_track(event, tracker){
+        $(document).on('ga_track', function ga_track(event, tracker) {
 
             // if this screws up it can have unsavory consequences, so we package it with error handling
             try {
@@ -118,17 +120,20 @@
                 });
             }
 
-            // we're not worried about dealing with errors for now, just send them on their way
-            // this would be a good spot to add error logging for this stuff if you're so inclined
-            catch(e) {}
+                // we're not worried about dealing with errors for now, just send them on their way
+                // this would be a good spot to add error logging for this stuff if you're so inclined
+            catch (e) {
+            }
 
-            // some people have ad blocking enabled which causes the listener above to break links
-            // (because the google analytics library doesn't load with most ad blocking) this fallback
-            // will ensure that tracking doesn't break site functionality that depends on the track
-            // complete event to fire, it will also help reduce click delay when the callback above doesn't
-            // execute in a timely manner (that may result in lost tracking, but it's a slightly better ux)
-            finally{
-                setTimeout(function(){ $(document).trigger('ga_track_complete'); }, 500);
+                // some people have ad blocking enabled which causes the listener above to break links
+                // (because the google analytics library doesn't load with most ad blocking) this fallback
+                // will ensure that tracking doesn't break site functionality that depends on the track
+                // complete event to fire, it will also help reduce click delay when the callback above doesn't
+                // execute in a timely manner (that may result in lost tracking, but it's a slightly better ux)
+            finally {
+                setTimeout(function () {
+                    $(document).trigger('ga_track_complete');
+                }, 500);
             }
         });
 
@@ -144,8 +149,7 @@
 
             if (typeof element !== 'undefined' &&
                 element !== undefined &&
-                element != '')
-            {
+                element != '') {
                 valid = true;
             }
 

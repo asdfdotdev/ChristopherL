@@ -15,7 +15,7 @@ var fs = require('fs-extra'),
     uglify = require('gulp-uglify');
 
 
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
     return gulp.src('./javascript/**/**/*.js')
         .pipe(concat('global.min.js'))
         .pipe(uglify())

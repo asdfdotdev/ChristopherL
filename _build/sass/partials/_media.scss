@@ -1,11 +1,11 @@
 a {
-	&:hover {
-		text-decoration: underline;
+    &:hover {
+        text-decoration: underline;
 
-		span {
-			text-decoration: underline;
-		}
-	}
+        span {
+            text-decoration: underline;
+        }
+    }
 }
 
 img {
@@ -133,7 +133,7 @@ img {
 }
 
 .button-links a {
-	transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
     display: block;
     width: 80%;
     text-align: center;
@@ -149,5 +149,5 @@ img {
 }
 
 sub {
-	word-wrap: break-word;
+    word-wrap: break-word;
 }

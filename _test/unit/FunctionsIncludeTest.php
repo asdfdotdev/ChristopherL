@@ -16,11 +16,11 @@ class FunctionsIncludeTest extends PHPUnit\Framework\TestCase
 
         // sample default response
         $response = array(
-            'status'    => '404',
-            'success'   => false,
-            'error'     => true,
-            'field'     => null,
-            'msg'       => 'An Unknown Error Occurred');
+            'status' => '404',
+            'success' => false,
+            'error' => true,
+            'field' => null,
+            'msg' => 'An Unknown Error Occurred');
 
         // create error
         set_response_error('You broke it good.', 'my_error_field', $response);
@@ -39,11 +39,11 @@ class FunctionsIncludeTest extends PHPUnit\Framework\TestCase
 
         // sample default response
         $response = array(
-            'status'    => '404',
-            'success'   => false,
-            'error'     => true,
-            'field'     => null,
-            'msg'       => 'An Unknown Error Occurred');
+            'status' => '404',
+            'success' => false,
+            'error' => true,
+            'field' => null,
+            'msg' => 'An Unknown Error Occurred');
 
         // create feedback
         set_response_feedback('Hey, I think that worked.', $response);
@@ -60,80 +60,100 @@ class FunctionsIncludeTest extends PHPUnit\Framework\TestCase
         // example serialized form submission
         $test_data = array(
             // clean data, values should not change
-            array(  'name'  => 'clean_text_input',
-                    'value' => 'Hello World.'
+            array(
+                'name' => 'clean_text_input',
+                'value' => 'Hello World.'
             ),
-            array(  'name'  => 'clean_email_input',
-                    'value' => 'fakeemail@domain.tld'
+            array(
+                'name' => 'clean_email_input',
+                'value' => 'fakeemail@domain.tld'
             ),
-            array(  'name'  => 'clean_array_input',
-                    'value' => array('thing 1', 'thing 2', 'thing 3')
+            array(
+                'name' => 'clean_array_input',
+                'value' => array('thing 1', 'thing 2', 'thing 3')
             ),
 
             // quoted data, quotes should be encoded when cleaned
-            array(  'name'  => 'double_quote_input',
-                    'value' => '"quote me on it"'
+            array(
+                'name' => 'double_quote_input',
+                'value' => '"quote me on it"'
             ),
-            array(  'name'  => 'single_quote_input',
-                    'value' => '\'quote me on it\''
+            array(
+                'name' => 'single_quote_input',
+                'value' => '\'quote me on it\''
             ),
-            array(  'name'  => 'quoted_array_input',
-                    'value' => array('"quote me on it"', '\'quote me on it\'', 'this is a “smart” quote which is funny because they aren‘t very ‘smart’')
+            array(
+                'name' => 'quoted_array_input',
+                'value' => array('"quote me on it"', '\'quote me on it\'', 'this is a “smart” quote which is funny because they aren‘t very ‘smart’')
             ),
 
             // clean data with extra leading/trailing spaces, values should be trimed of excess whitespace
-            array(  'name'  => 'spaces_text_input',
-                    'value' => '  Hello World.  '
+            array(
+                'name' => 'spaces_text_input',
+                'value' => '  Hello World.  '
             ),
-            array(  'name'  => 'spaces_email_input',
-                    'value' => '  fakeemail@domain.tld  '
+            array(
+                'name' => 'spaces_email_input',
+                'value' => '  fakeemail@domain.tld  '
             ),
-            array(  'name'  => 'spaces_array_input',
-                    'value' => array('  thing 1  ', '  thing 2  ', '  thing 3  ')
+            array(
+                'name' => 'spaces_array_input',
+                'value' => array('  thing 1  ', '  thing 2  ', '  thing 3  ')
             ),
 
             // poluted data, values should be cleaned of unneccessary tags
-            array(  'name'  => 'polluted_text_input',
+            array(
+                'name' => 'polluted_text_input',
                 'value' => '  <div><b><i>Hello</i> <span>World.</span></b></div>  '
             ),
-            array(  'name'  => 'polluted_email_input',
+            array(
+                'name' => 'polluted_email_input',
                 'value' => '  <div><b><i>fakeemail</i>@<span>domain</span>.tld</b></div>  '
             ),
-            array(  'name'  => 'polluted_array_input',
+            array(
+                'name' => 'polluted_array_input',
                 'value' => array('  <div class="my-class">thing 1</div>  ', '  <div id="my_id">thing 2</div>  ', '  <p><b><i><u>thing 3</p>  ')
             ),
 
             // junk data, values should be empty because there's nothing useful here
-            array(  'name'  => 'junk_open_tag_input',
+            array(
+                'name' => 'junk_open_tag_input',
                 'value' => '  <div><b><i><span><fake_tag><open_tags_only>  '
             ),
-            array(  'name'  => 'junk_close_tag_input',
+            array(
+                'name' => 'junk_close_tag_input',
                 'value' => '  </div></b></i></span></fake_tag></close_tags_only>  '
             ),
-            array(  'name'  => 'junk_array_input',
+            array('name' => 'junk_array_input',
                 'value' => array('  <div class="my-class"></div>  ', '  <div id="my_id"></div>  ', '  <p><b><i><u>  ')
             ),
 
             // malicious JavaScript data, values should be cleaned and harmless
-            array(  'name'  => 'malicious_js_text_input',
+            array(
+                'name' => 'malicious_js_text_input',
                 'value' => '       <script>window.location.href = "http://christopherl.com";</script>'
             ),
             // text input above obfuscated with https://www.javascriptobfuscator.com/Javascript-Obfuscator.aspx
-            array(  'name'  => 'malicious_js_obfuscated_input',
+            array(
+                'name' => 'malicious_js_obfuscated_input',
                 'value' => '< script >var _0x5e97=["\x68\x72\x65\x66","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x68\x74\x74\x70\x3A\x2F\x2F\x63\x68\x72\x69\x73\x74\x6F\x70\x68\x65\x72\x6C\x2E\x63\x6F\x6D"];window[_0x5e97[1]][_0x5e97[0]]=_0x5e97[2]</ script >'
             ),
-            array(  'name'  => 'malicious_js_array_input',
+            array(
+                'name' => 'malicious_js_array_input',
                 'value' => array('       <script>\n\n\n\n\twindow.location.href = "http://christopherl.com";</script>     ', 'just kidding this is plain text', '   < script >var _0x5e97=["\x68\x72\x65\x66","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x68\x74\x74\x70\x3A\x2F\x2F\x63\x68\x72\x69\x73\x74\x6F\x70\x68\x65\x72\x6C\x2E\x63\x6F\x6D"];window[_0x5e97[1]][_0x5e97[0]]=_0x5e97[2]</ script >  ')
             ),
 
             // malicious PHP data, values should be cleaned and harmless
-            array(  'name'  => 'malicious_php_tagged_input',
+            array(
+                'name' => 'malicious_php_tagged_input',
                 'value' => '<?php eval(header("Location: http:christopherl.com");?>'
             ),
-            array(  'name'  => 'malicious_php_tagless_input',
+            array(
+                'name' => 'malicious_php_tagless_input',
                 'value' => '; "\'; \'"; eval(header("Location: http:christopherl.com");'
             ),
-            array(  'name'  => 'malicious_php_array_input',
+            array(
+                'name' => 'malicious_php_array_input',
                 'value' => array('<?php eval(header("Location: http:christopherl.com");?>', 'just kidding this is plain text', '; eval(header("Location: http:christopherl.com");')
             ),
         );

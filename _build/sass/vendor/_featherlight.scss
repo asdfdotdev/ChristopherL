@@ -15,8 +15,11 @@ html.with-featherlight {
     display: none;
 
     /* dimensions: spanning the background from edge to edge */
-    position:fixed;
-    top: 0; right: 0; bottom: 0; left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 2147483647; /* z-index needs to be >= elements on the site. */
 
     /* position: centering content */
@@ -117,7 +120,6 @@ html.with-featherlight {
     /* styling */
     width: 100%;
 }
-
 
 .featherlight-iframe .featherlight-content {
     /* removed the border for image croping since iframe is edge to edge */
