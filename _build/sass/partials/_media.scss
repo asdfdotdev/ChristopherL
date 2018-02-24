@@ -145,6 +145,10 @@ img {
         background: $blue;
         color: $white !important;
         text-decoration: none;
+
+        span {
+            text-decoration: none;
+        }
     }
 }
 
