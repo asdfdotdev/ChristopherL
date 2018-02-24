@@ -3,7 +3,7 @@
  * Development Page - Refactor this.
  *
  * @package ChristopherL.com
- * @copyright 2016-2017 ChristopherL (https://github.com/chrislarrycarl)
+ * @copyright 2016-2018 ChristopherL (https://github.com/christopherldotcom)
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -57,22 +57,43 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
                 width="300">
             <p>
                 Long ago a, now ubiquitous, <a href="https://wordpress.org/" target="_blank">blogging software</a> project popularized the phrase
-                <i>code is poetry</i>. We at ChristopherL believe that it should be. Creating software is not dissimilar to creating art. The software development process
-                is a journey, the poetry of source code tells the story of that journey and the people who share it.
+                <i>code is poetry</i>. We at ChristopherL believe that it should be. Creating software is not dissimilar to creating art. The software 
+                development process is a journey, the poetry of source code tells the story of that journey and the people who share it.
             </p>
             <h2>Open Source Software</h2>
             <p>
                 At ChristopherL we want to share our journey with as many people as possible, in our own small way, which is why we release
                 all our projects as open source.
             </p>
-            <p>All of the following are available for you to enjoy for free, <a href="https://en.wikipedia.org/wiki/Gratis_versus_libre" target="_blank">as in beer and speech</a>.</p>
+            <p>
+            	All of the following are available for you to enjoy for free, 
+            	<a href="https://en.wikipedia.org/wiki/Gratis_versus_libre" target="_blank">as in beer and speech</a>.
+			</p>
             <ul>
-                <li><a href="https://github.com/christopherldotcom/ChristopherL" target="_blank">ChristopherL</a> &ndash; The code that runs this very website. You're using it right now!</li>
-                <li><a href="https://github.com/christopherldotcom/utm.codes" target="_blank">utm.codes</a> &ndash; A helpful WordPress plugin.</li>
-                <li><a href="https://github.com/christopherldotcom/cl_database" target="_blank">cl_database</a> &ndash; A simple PHP database class.</li>
-                <li><a href="https://github.com/christopherldotcom/cl_session" target="_blank">cl_session</a> &ndash; A friendly PHP session class.</li>
-                <li><a href="https://github.com/christopherldotcom/Helios-Calendar" target="_blank">Helios Calendar</a> &ndash; A once grand web calendar, now filled with nostalgia.</li>
-                <li><a href="https://github.com/christopherldotcom/dots" target="_blank">dots</a> - A collection of odds and ends to help make machine setup easier.</li>
+                <li>
+                	<a href="https://github.com/christopherldotcom/ChristopherL" target="_blank">ChristopherL</a> 
+                	- The code that runs this very website. You're using it right now!
+				</li>
+                <li>
+                	<a href="https://github.com/christopherldotcom/utm.codes" target="_blank">utm.codes</a> 
+                	- A helpful WordPress plugin.
+				</li>
+                <li>
+                	<a href="https://github.com/christopherldotcom/cl_database" target="_blank">cl_database</a> 
+                	&ndash; A simple PHP database class.
+				</li>
+                <li>
+                	<a href="https://github.com/christopherldotcom/cl_session" target="_blank">cl_session</a>
+                	&ndash; A friendly PHP session class.
+				</li>
+                <li>
+                	<a href="https://github.com/christopherldotcom/Helios-Calendar" target="_blank">Helios Calendar</a> 
+                	&ndash; A once grand web calendar, now filled with nostalgia.
+				</li>
+                <li>
+                	<a href="https://github.com/christopherldotcom/dots" target="_blank">dots</a>
+                	- A collection of odds and ends to help make machine setup easier.
+				</li>
             </ul>
         </div>
     </section>

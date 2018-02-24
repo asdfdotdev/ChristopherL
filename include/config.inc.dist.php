@@ -3,14 +3,14 @@
  * Global Config - Knobs and switches to make different things happen.
  *
  * @package ChristopherL.com
- * @copyright 2016-2017 ChristopherL (https://github.com/chrislarrycarl)
+ * @copyright 2016-2018 ChristopherL (https://github.com/christopherldotcom)
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 
 $config = array(
     // not really that important, make it anything you want (used in generator meta)
-    'site_version'          => '0.4',
+    'site_version'          => '0.6',
 
 
     // Some resources (canonical url, social sharing images) require a complete URL
@@ -142,5 +142,5 @@ $config['smarty'] = array(
 );
 
 
-// Some PHP installs demand a timezone. If your's does tell it you're a Rouge Rovers
+// Some PHP installs demand a timezone, this avoids issues
 ini_set('date.timezone','America/Detroit');

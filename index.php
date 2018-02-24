@@ -3,7 +3,7 @@
  * Our Homepage - Where the magic happens.
  *
  * @package ChristopherL.com
- * @copyright 2016-2017 ChristopherL (https://github.com/chrislarrycarl)
+ * @copyright 2016-2018 ChristopherL (https://github.com/christopherldotcom)
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -50,11 +50,11 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     $content = <<<HTML
     <section class="image-right">
         <div class="the-outer-limits">
-            <h1>Greetings &amp; Salutations <span class="hidden-phone">Web Friends</span></h1>
+            <h1>Greetings &amp; Salutations</h1>
             <p>
                 It's a big internet out there, thank you for visiting this little corner of it. Since you're here you may find yourself asking,
-                <i>"What is ChristopherL?"</i> An idea? A dream? A vision? A tongue in cheek website of a fake brand for a Portland, OR based
-                web developer? &hellip; The truth is, it's all these things, and much more.
+                <i>"What is ChristopherL?"</i> An idea? A dream? A vision? A tongue in cheek brand for a Portland, Oregon based web developer? 
+                &hellip; The truth is, it's all these things, and much more.
             </p>
             <p>
                 We're stoked for an opportunity to help you get to know ChristopherL better. So pull up a chair, get comfortable, 
@@ -88,7 +88,7 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
     
     {$footer_cta}
     
-    <iframe src="https://www.youtube.com/embed/ZXsQAXx_ao0?showinfo=0&showsearch=0&rel=0&iv_load_policy=3&cc_load_policy=0&hd=1"
+    <iframe src="https://www.youtube-nocookie.com/embed/ZXsQAXx_ao0?showinfo=0&showsearch=0&rel=0&iv_load_policy=3&cc_load_policy=0&hd=1"
         frameborder="0"
         width="560" 
         height="315"

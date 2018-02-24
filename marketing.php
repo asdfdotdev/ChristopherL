@@ -3,7 +3,7 @@
  * Marketing Page - Building a persona.
  *
  * @package ChristopherL.com
- * @copyright 2016-2017 ChristopherL (https://github.com/chrislarrycarl)
+ * @copyright 2016-2018 ChristopherL (https://github.com/christopherldotcom)
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -56,18 +56,20 @@ if (!$smarty->isCached('base.tpl', $cache_id)) {
                 title="A Trip Down Memory Lane"
                 width="300">
             <p>
-                Today's marketer is data obsessed, metric driven, and customer focused. Gone are the days of marketing simply being a means for talking at your clients. ChristopherL 
-                believes good marketing is about compelling storytelling, and we know the why is a foundation for any good brand story.
+                Today's marketer is data obsessed, metric driven, and customer focused. Gone are the days of marketing 
+                simply being a means for talking at your clients. At ChristopherL we believe good marketing is about compelling 
+                storytelling, and we know <i>why</i> is the foundation for a good brand story.
             </p>
             
             <h2>Christopherl <span class="hidden-phone">For Your</span> Url</h2>
             <p>
-                This isn't to say that it's all cool apps, magic quadrants, and deep dive analytics. Branding still plays a vital role in the age
-                of digital marketing. Even something as rudimentary as a short url can serve as an opportunity for 
-                <del>self promotion</del> improving brand awareness.
+                But that doesn't mean marketing is all cool apps, magic quadrants, and deep dive analytics. Branding still plays 
+                a vital role in the age of digital marketing. Even something as rudimentary as a short url can serve as 
+                an opportunity for <del>self promotion</del> improving brand awareness.
             </p>
             <p>
-                Case in point, just try to resist <span class="action-desktop">clicking</span><span class="action-mobile">tapping</span> this cleverly branded link...
+                Case in point, just try to resist <span class="action-desktop">clicking</span><span class="action-mobile">tapping</span> 
+                this cleverly branded link...
             </p>
             <p>
                 <a href="http://christophurl.co/marketing_secrets">http://christophurl.co/marketing_secrets</a>

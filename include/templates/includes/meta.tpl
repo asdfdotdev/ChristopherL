@@ -50,7 +50,7 @@
 {* No notice if we don't compress, so let them know in the meta *}
 <meta name="copyleft" content="1999 - {date("Y")} ChristopherL">
 <meta name="license" content="GNU GPL v2">
-<meta name="download" content="https://github.com/chrislarrycarl/ChristopherL">
+<meta name="download" content="https://github.com/christopherldotcom/ChristopherL">
 
 {if $a_b_testing && $optimizely_id}
     <script src="https://cdn.optimizely.com/js/{$optimizely_id}.js"></script>

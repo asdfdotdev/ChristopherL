@@ -3,7 +3,7 @@
  * Contact Page - Reach out and touch someone.
  *
  * @package ChristopherL.com
- * @copyright 2016-2017 ChristopherL (https://github.com/chrislarrycarl)
+ * @copyright 2016-2018 ChristopherL (https://github.com/christopherldotcom)
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -123,19 +123,20 @@ HTML;
                 <span>Yes, this number is real. And it's awesome.<br>It's real awesome.</span>
             </aside>
             <p>
-                It's a small world. The human race is more interconnected now than at any point in our history,
-                even still, connecting with people can be difficult. Should you wish to contact us we've rounded
+                It's a small world. The human race is more interconnected now than at any point in our history.
+                Even still, connecting with people can be difficult. Should you like to contact us we've rounded
                 up all your options into one easy-to-use list.
             </p>
             
-            <h2>Social Media</h2>
+            <h2>Social Profiles</h2>
             <p>
-                You can find us on 
-                <a href="https://twitter.com/chrislarrycarl" target="_blank">Twitter</a>, 
-                <a href="https://www.linkedin.com/in/chriscarlevato" target="_blank">LinkedIn</a>, 
+                You can find ChristopherL on 
                 <a href="https://github.com/chrislarrycarl" target="_blank">GitHub</a>, 
+                <a href="https://www.linkedin.com/in/chriscarlevato" target="_blank">LinkedIn</a>, 
                 <a href="https://www.flickr.com/photos/chrislarrycarl" target="_blank">Flickr</a>,
+                <a href="https://profiles.wordpress.org/chrislarrycarl" target="_blank">WordPress</a>,
                 <a href="https://keybase.io/chrislarrycarl" target="_blank">Keybase</a>,
+                <a href="https://twitter.com/chrislarrycarl" target="_blank">Twitter</a>, 
                 <a href="https://plus.google.com/100207846325253267928" target="_blank">Google+</a>, and
                 <a href="https://setiathome.berkeley.edu/show_user.php?userid=166402" target="_blank">Seti@Home</a>.
             </p>

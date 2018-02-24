@@ -1,3 +1,13 @@
+a {
+	&:hover {
+		text-decoration: underline;
+
+		span {
+			text-decoration: underline;
+		}
+	}
+}
+
 img {
     max-width: 100%;
 }
@@ -123,6 +133,7 @@ img {
 }
 
 .button-links a {
+	transition: all 0.2s ease-in;
     display: block;
     width: 80%;
     text-align: center;
@@ -135,4 +146,8 @@ img {
         color: $white !important;
         text-decoration: none;
     }
+}
+
+sub {
+	word-wrap: break-word;
 }

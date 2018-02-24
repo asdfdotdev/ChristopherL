@@ -26,7 +26,7 @@ Gulp is used to automate creation of JavaScript and CSS assets.
 
 ## Tests
 
-Unit tests are included at `/_tests/`. 
+Unit tests are included at `/_test/`. 
 
 Test classes are written for PHPUnit v6.0+. They might work with 5.7 thanks to it's forward compatibility, but are not developed or tested against the 5.x branch.
 
@@ -55,9 +55,9 @@ Additionally, if you use this code you are required to have fun while you do it.
 
 ## Feedback
 
-If you have something nice to say about this code, [please do so publicly](https://twitter.com/intent/tweet?original_referer=http://github.com/chrislarrycarl/ChristopherL&text=.%40chrislarrycarl%20Was%20checking%20out%20your%20ChristopherL%20repo%20and...).
+If you have something nice to say about this code, [please do so publicly](https://twitter.com/intent/tweet?original_referer=http://github.com/christopherldotcom/ChristopherL&text=.%40chrislarrycarl%20I%20was%20checking%20out%20your%20ChristopherL%20repo%20and...).
 
-If you have some insight for improvement, [please submit it here](https://github.com/chrislarrycarl/ChristopherL/issues).
+If you have some insight for improvement, [please submit it here](https://github.com/christopherldotcom/ChristopherL/issues).
 
 ## License
 [Built with love](https://www.youtube.com/watch?v=Xe1TZaElTAs) and shared under [GNU GPL 2.0](http://www.gnu.org/licenses/gpl-2.0.html)

@@ -3,67 +3,84 @@ footer {
     background: $black-almost;
     color: $white;
     padding-top: 2%;
-}
 
-footer h4,
-.addthis_horizontal_follow_toolbox p {
-    font-family: $header_font;
-    font-size: 3.0rem;
-    margin: 0 0 5% 0;
-    padding: 0;
-    line-height: 1.35;
-}
+	h4,
+	.addthis_horizontal_follow_toolbox p {
+		font-family: $header_font;
+		font-size: 3.0rem;
+		margin: 0 0 5% 0;
+		padding: 0;
+		line-height: 1.35;
+		width: 5px;
+		display: table;
+		white-space: pre-wrap;
+		white-space: -moz-pre-wrap;
+		white-space: -pre-wrap;
+		white-space: -o-pre-wrap;
+		word-wrap: break-word;
 
-footer .head {
-    display: block;
-    margin: 2% auto 0 auto;
-    width: 100px;
-}
+		@include tablet {
+			width: auto;
+			display: inline;
+			white-space: normal;
+		}
+	}
 
-.copyright {
-    clear: both;
-    display: block;
-    width: auto;
-    margin: auto;
-    text-align: center;
-    padding-top: 2%;
-    font-size: 0.9em;
+	.head {
+		display: block;
+		margin: 2% auto 0 auto;
+		width: 100px;
+	}
 
-    @include tablet {
-        font-size: 1em;
-    }
+	li {
+		white-space: nowrap;
+	}
 
-    span:first-child {
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        display: inline-block;
-    }
+	.copyright {
+		clear: both;
+		display: block;
+		width: auto;
+		margin: auto;
+		text-align: center;
+		padding-top: 2%;
+		font-size: 0.9em;
 
-    &:before,
-    &:after {
-        content: '';
-        display: inline-block;
-        vertical-align: top;
-        width: 5%;
-        height: 1px;
-        background: $gray;
-        opacity: .8;
-        position: relative;
-        top: .65em;
-        margin: 0 5%;
+		@include tablet {
+			font-size: 1em;
+		}
 
-        @include tablet {
-            width: 20%;
-        }
-    }
+		span:first-child {
+			-moz-transform: scaleX(-1);
+			-o-transform: scaleX(-1);
+			-webkit-transform: scaleX(-1);
+			transform: scaleX(-1);
+			display: inline-block;
+		}
 
-    a {
-        color: $white;
+		&:before,
+		&:after {
+			content: '';
+			display: inline-block;
+			vertical-align: top;
+			width: 5%;
+			height: 1px;
+			background: $gray;
+			opacity: .8;
+			position: relative;
+			top: .65em;
+			margin: 0 5%;
 
-        &.github {
-            color: $blue;
-        }
-    }
+			@include tablet {
+				width: 20%;
+			}
+		}
+
+		a {
+			color: $white;
+
+			&.github {
+				color: $blue;
+			}
+		}
+	}
 }

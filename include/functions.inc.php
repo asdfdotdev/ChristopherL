@@ -3,7 +3,7 @@
  * Functions Toolbox - The brains of the operation.
  *
  * @package ChristopherL.com
- * @copyright 2016-2017 ChristopherL (https://github.com/chrislarrycarl)
+ * @copyright 2016-2018 ChristopherL (https://github.com/christopherldotcom)
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -103,10 +103,10 @@ function smarty_smoosh() {
         echo "<!--
     Compressed for performance, not obfuscation.
     Site source released under GNU GPL 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
-    Download: https://github.com/chrislarrycarl/ChristopherL
+    Download: https://github.com/christopherldotcom/ChristopherL
 -->
 ";
-        
+
         $smarty->loadFilter('output', 'trimwhitespace');
     }
 }
@@ -195,7 +195,7 @@ function set_response_feedback($message='', &$response) {
 
 /**
  * Footer CTA used throughout the site.
- * 
+ *
  * @return string           markup required for newsletter subscription
  */
 function newsletter_subscribe() {

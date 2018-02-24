@@ -3,7 +3,7 @@
  * About Page - Getting to know you.
  *
  * @package ChristopherL.com
- * @copyright 2016-2017 ChristopherL (https://github.com/chrislarrycarl)
+ * @copyright 2016-2018 ChristopherL (https://github.com/christopherldotcom)
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -76,19 +76,19 @@ function initMap() {
         {
             position: {lat: 42.9633599, lng: -85.6680863},
             icon: icons.inactive,
-            url: 'https://goo.gl/maps/uXQxFQc3p9Q2',
+            url: 'https://goo.gl/maps/EdoakYfwXRw',
             event: 'map-pin-gr'
         },
         {
             position: {lat: 43.6187102, lng: -116.2146068},
             icon: icons.inactive,
-            url: 'https://goo.gl/maps/uz4wo7k9QaC2',
+            url: 'https://goo.gl/maps/MYBAWAPfEQq',
             event: 'map-pin-boi'
         },
         {
             position: {lat: 45.5230622, lng: -122.6764816},
             icon: icons.active,
-            url: 'https://goo.gl/maps/W6MgBermf8m',
+            url: 'https://goo.gl/maps/ZtS42HmLqF42',
             event: 'map-pin-pdx'
         }
     ];
